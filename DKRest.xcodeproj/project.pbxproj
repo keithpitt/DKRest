@@ -161,7 +161,7 @@
 /* Begin PBXProject section */
 		5378747F140109AE00D9B746 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 53787482140109AE00D9B746 /* Build configuration list for PBXProject "DKRestResource" */;
+			buildConfigurationList = 53787482140109AE00D9B746 /* Build configuration list for PBXProject "DKRest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -296,7 +296,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53787482140109AE00D9B746 /* Build configuration list for PBXProject "DKRestResource" */ = {
+		53787482140109AE00D9B746 /* Build configuration list for PBXProject "DKRest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53787484140109AE00D9B746 /* Debug */,
