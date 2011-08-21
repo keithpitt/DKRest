@@ -9,16 +9,16 @@
 #import "SpecHelper.h"
 #import "FGSpecRemoteUser.h"
 
-#import "DKAPIRouter.h"
+#import "DKRestRouter.h"
 
 SPEC_BEGIN(DKAPIRouterSpec)
 
 describe(@"DKAPIRouterSpec", ^{
     
-    __block DKAPIRouter * router;
+    __block DKRestRouter * router;
     
     beforeEach(^{
-        router = [DKAPIRouter new];
+        router = [DKRestRouter new];
         router.host = @"api.example.com";
         router.version = @"1";
         router.ssl = NO;
@@ -28,7 +28,7 @@ describe(@"DKAPIRouterSpec", ^{
         
         it(@"should return the correct resource for classes", ^{
             
-            NSURL * url = [router resourceFor:[FGSpecRemoteUser class]];
+            NSURL * url = [router routeFor:[FGSpecRemoteUser class]];
             
             expect([url absoluteString]).toEqual(@"http://api.example.com/v1/users");
             
@@ -39,7 +39,7 @@ describe(@"DKAPIRouterSpec", ^{
             FGSpecRemoteUser * user = [FGSpecRemoteUser new];
             user.identifier = [NSNumber numberWithInt:12];
             
-            NSURL * url = [router resourceFor:user];
+            NSURL * url = [router routeFor:user];
             
             expect([url absoluteString]).toEqual(@"http://api.example.com/v1/users/12");
             

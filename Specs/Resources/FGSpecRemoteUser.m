@@ -12,8 +12,10 @@
 
 @synthesize identifier;
 
-+ (NSString *)route {
++ (NSString *)resourcePath {
+    
     return @"users";
+    
 }
 
 @end

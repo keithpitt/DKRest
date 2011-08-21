@@ -1,0 +1,12 @@
+[submodule "External/DKSupport"]
+	path = External/DKSupport
+	url = git@github.com:keithpitt/DKSupport
+[submodule "External/DKAPIRequest"]
+	path = External/DKAPIRequest
+	url = git@github.com:keithpitt/DKAPIRequest
+[submodule "External/DKCoreData"]
+	path = External/DKCoreData
+	url = git@github.com:keithpitt/DKCoreData
+[submodule "External/DKFile"]
+	path = External/DKFile
+	url = git@github.com:keithpitt/DKFile
