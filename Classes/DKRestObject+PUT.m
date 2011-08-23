@@ -10,7 +10,7 @@
 
 @implementation DKRestObject (PUT)
 
-+ (void)get:(NSString *)path parameters:(NSDictionary *)params finish:(DKAPIRequestFinishBlock)finishBlock delegate:(id)delegate {
++ (void)put:(NSString *)path parameters:(NSDictionary *)params finish:(DKAPIRequestFinishBlock)finishBlock delegate:(id)delegate {
     
     [DKRestObject startRequestWithObject:[self class]
                                     path:path
@@ -21,7 +21,7 @@
     
 }
 
-- (void)get:(NSString *)path parameters:(NSDictionary *)params finish:(DKAPIRequestFinishBlock)finishBlock delegate:(id)delegate {
+- (void)put:(NSString *)path parameters:(NSDictionary *)params finish:(DKAPIRequestFinishBlock)finishBlock delegate:(id)delegate {
 
     [DKRestObject startRequestWithObject:self
                                     path:path

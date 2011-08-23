@@ -140,6 +140,7 @@
 		531564EA14039E40009A79E5 /* DKRestObject+POST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+POST.m"; sourceTree = "<group>"; };
 		531564EB14039E41009A79E5 /* DKRestObject+PUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKRestObject+PUT.h"; sourceTree = "<group>"; };
 		531564EC14039E41009A79E5 /* DKRestObject+PUT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+PUT.m"; sourceTree = "<group>"; };
+		531564F114039F95009A79E5 /* DKRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRest.h; sourceTree = "<group>"; };
 		5378749F14010A0A00D9B746 /* Specs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Specs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		537874AB14010A0A00D9B746 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		537874AF14010A0A00D9B746 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -513,6 +514,7 @@
 		53FFD00A14011CEC00E6B764 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				531564F114039F95009A79E5 /* DKRest.h */,
 				531564A914038591009A79E5 /* DKRestCacheStrategy.h */,
 				531564E114039899009A79E5 /* DKRestRouter */,
 				5315647D140354DA009A79E5 /* DKRestObject */,

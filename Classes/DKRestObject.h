@@ -55,5 +55,3 @@
 - (DKAPIRequest *)save:(DKAPIRequestFinishBlock)finishBlock delegate:(id)delegate;
 
 @end
-
-#import "DKRestObject+GET.h"
