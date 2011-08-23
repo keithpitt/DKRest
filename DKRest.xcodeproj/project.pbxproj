@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5315648314035506009A79E5 /* DKRestObject+GET.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315648214035506009A79E5 /* DKRestObject+GET.m */; };
+		531564A314037853009A79E5 /* DKAPIFormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315649514037853009A79E5 /* DKAPIFormData.m */; };
+		531564A414037853009A79E5 /* DKAPIInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315649714037853009A79E5 /* DKAPIInterceptor.m */; };
+		531564A514037853009A79E5 /* DKAPIProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315649B14037853009A79E5 /* DKAPIProgress.m */; };
+		531564A614037853009A79E5 /* DKAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315649E14037853009A79E5 /* DKAPIRequest.m */; };
+		531564A714037853009A79E5 /* DKAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564A014037853009A79E5 /* DKAPIResponse.m */; };
+		531564A814037853009A79E5 /* DKAPIStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564A214037853009A79E5 /* DKAPIStub.m */; };
+		531564CF140387DB009A79E5 /* DKPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564AD140387DB009A79E5 /* DKPredicate.m */; };
+		531564D0140387DB009A79E5 /* DKPredicateBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564AF140387DB009A79E5 /* DKPredicateBuilder.m */; };
+		531564D1140387DB009A79E5 /* NSArray+Enumurable.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564B3140387DB009A79E5 /* NSArray+Enumurable.m */; };
+		531564D2140387DB009A79E5 /* NSDate+Conversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564B6140387DB009A79E5 /* NSDate+Conversions.m */; };
+		531564D3140387DB009A79E5 /* NSDate+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564B8140387DB009A79E5 /* NSDate+Initializers.m */; };
+		531564D4140387DB009A79E5 /* NSMutableArray+Reverse.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564BB140387DB009A79E5 /* NSMutableArray+Reverse.m */; };
+		531564D5140387DB009A79E5 /* NSNumber+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564BE140387DB009A79E5 /* NSNumber+Initializers.m */; };
+		531564D6140387DB009A79E5 /* NSObject+DelayedBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564C1140387DB009A79E5 /* NSObject+DelayedBlock.m */; };
+		531564D7140387DB009A79E5 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564C4140387DB009A79E5 /* NSString+Hash.m */; };
+		531564D8140387DB009A79E5 /* NSString+Inflections.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564C6140387DB009A79E5 /* NSString+Inflections.m */; };
+		531564D9140387DB009A79E5 /* NSString+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564C8140387DB009A79E5 /* NSString+Initializers.m */; };
+		531564DA140387DB009A79E5 /* UIAlertView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564CB140387DB009A79E5 /* UIAlertView+Shortcuts.m */; };
+		531564DB140387DB009A79E5 /* UIViewController+ParentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564CE140387DB009A79E5 /* UIViewController+ParentController.m */; };
+		531564E0140387FA009A79E5 /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564DE140387FA009A79E5 /* LoggerClient.m */; };
+		531564E414039CE7009A79E5 /* DKRestObject+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564E314039CE7009A79E5 /* DKRestObject+HTTP.m */; };
+		531564ED14039E41009A79E5 /* DKRestObject+DELETE.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564E614039E40009A79E5 /* DKRestObject+DELETE.m */; };
+		531564EF14039E41009A79E5 /* DKRestObject+POST.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564EA14039E40009A79E5 /* DKRestObject+POST.m */; };
+		531564F014039E41009A79E5 /* DKRestObject+PUT.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564EC14039E41009A79E5 /* DKRestObject+PUT.m */; };
 		537874B014010A0A00D9B746 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 537874AF14010A0A00D9B746 /* main.m */; };
 		537874BD14010A1F00D9B746 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537874BC14010A1F00D9B746 /* UIKit.framework */; };
 		537874BF14010A2500D9B746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537874BE14010A2500D9B746 /* Foundation.framework */; };
@@ -18,9 +43,6 @@
 		53FFD01914011D3900E6B764 /* DKAPIRouterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01714011D3900E6B764 /* DKAPIRouterSpec.m */; };
 		53FFD01A14011D3900E6B764 /* DKRestResourceQuerySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01814011D3900E6B764 /* DKRestResourceQuerySpec.m */; };
 		53FFD01E14011D4600E6B764 /* FGSpecRemoteUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01D14011D4600E6B764 /* FGSpecRemoteUser.m */; };
-		53FFD02814011D7500E6B764 /* DKAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD02314011D7500E6B764 /* DKAPIRequest.m */; };
-		53FFD02914011D7500E6B764 /* DKAPIRequestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD02514011D7500E6B764 /* DKAPIRequestStub.m */; };
-		53FFD02A14011D7500E6B764 /* DKAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD02714011D7500E6B764 /* DKAPIResponse.m */; };
 		53FFD05114011D7E00E6B764 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD02D14011D7E00E6B764 /* ASIAuthenticationDialog.m */; };
 		53FFD05214011D7E00E6B764 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD03014011D7E00E6B764 /* ASIDataCompressor.m */; };
 		53FFD05314011D7E00E6B764 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD03214011D7E00E6B764 /* ASIDataDecompressor.m */; };
@@ -36,19 +58,6 @@
 		53FFD05D14011D7E00E6B764 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD04B14011D7E00E6B764 /* SBJsonParser.m */; };
 		53FFD05E14011D7E00E6B764 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD04D14011D7E00E6B764 /* SBJsonWriter.m */; };
 		53FFD05F14011D7E00E6B764 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD05014011D7E00E6B764 /* Reachability.m */; };
-		53FFD08414011D8700E6B764 /* DKPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD06214011D8700E6B764 /* DKPredicate.m */; };
-		53FFD08514011D8700E6B764 /* DKPredicateBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD06414011D8700E6B764 /* DKPredicateBuilder.m */; };
-		53FFD08614011D8700E6B764 /* NSArray+Enumurable.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD06814011D8700E6B764 /* NSArray+Enumurable.m */; };
-		53FFD08714011D8700E6B764 /* NSDate+Conversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD06B14011D8700E6B764 /* NSDate+Conversions.m */; };
-		53FFD08814011D8700E6B764 /* NSDate+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD06D14011D8700E6B764 /* NSDate+Initializers.m */; };
-		53FFD08914011D8700E6B764 /* NSMutableArray+Reverse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD07014011D8700E6B764 /* NSMutableArray+Reverse.m */; };
-		53FFD08A14011D8700E6B764 /* NSNumber+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD07314011D8700E6B764 /* NSNumber+Initializers.m */; };
-		53FFD08B14011D8700E6B764 /* NSObject+DelayedBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD07614011D8700E6B764 /* NSObject+DelayedBlock.m */; };
-		53FFD08C14011D8700E6B764 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD07914011D8700E6B764 /* NSString+Hash.m */; };
-		53FFD08D14011D8700E6B764 /* NSString+Inflections.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD07B14011D8700E6B764 /* NSString+Inflections.m */; };
-		53FFD08E14011D8700E6B764 /* NSString+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD07D14011D8700E6B764 /* NSString+Initializers.m */; };
-		53FFD08F14011D8700E6B764 /* UIAlertView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD08014011D8700E6B764 /* UIAlertView+Shortcuts.m */; };
-		53FFD09014011D8700E6B764 /* UIViewController+ParentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD08314011D8700E6B764 /* UIViewController+ParentController.m */; };
 		53FFD09714011D8D00E6B764 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD09314011D8D00E6B764 /* ISO8601DateFormatter.m */; };
 		53FFD09814011D8D00E6B764 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD09614011D8D00E6B764 /* RegexKitLite.m */; };
 		53FFD09E14011ED500E6B764 /* DKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD09D14011ED500E6B764 /* DKFile.m */; };
@@ -73,6 +82,64 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5315648114035506009A79E5 /* DKRestObject+GET.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKRestObject+GET.h"; sourceTree = "<group>"; };
+		5315648214035506009A79E5 /* DKRestObject+GET.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+GET.m"; sourceTree = "<group>"; };
+		5315649314037853009A79E5 /* DKAPICacheStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPICacheStrategy.h; path = DKAPIRequest/Classes/DKAPICacheStrategy.h; sourceTree = "<group>"; };
+		5315649414037853009A79E5 /* DKAPIFormData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIFormData.h; path = DKAPIRequest/Classes/DKAPIFormData.h; sourceTree = "<group>"; };
+		5315649514037853009A79E5 /* DKAPIFormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIFormData.m; path = DKAPIRequest/Classes/DKAPIFormData.m; sourceTree = "<group>"; };
+		5315649614037853009A79E5 /* DKAPIInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIInterceptor.h; path = DKAPIRequest/Classes/DKAPIInterceptor.h; sourceTree = "<group>"; };
+		5315649714037853009A79E5 /* DKAPIInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIInterceptor.m; path = DKAPIRequest/Classes/DKAPIInterceptor.m; sourceTree = "<group>"; };
+		5315649814037853009A79E5 /* DKAPIInterceptorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIInterceptorProtocol.h; path = DKAPIRequest/Classes/DKAPIInterceptorProtocol.h; sourceTree = "<group>"; };
+		5315649914037853009A79E5 /* DKAPILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPILogger.h; path = DKAPIRequest/Classes/DKAPILogger.h; sourceTree = "<group>"; };
+		5315649A14037853009A79E5 /* DKAPIProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIProgress.h; path = DKAPIRequest/Classes/DKAPIProgress.h; sourceTree = "<group>"; };
+		5315649B14037853009A79E5 /* DKAPIProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIProgress.m; path = DKAPIRequest/Classes/DKAPIProgress.m; sourceTree = "<group>"; };
+		5315649C14037853009A79E5 /* DKAPIProgressProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIProgressProtocol.h; path = DKAPIRequest/Classes/DKAPIProgressProtocol.h; sourceTree = "<group>"; };
+		5315649D14037853009A79E5 /* DKAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIRequest.h; path = DKAPIRequest/Classes/DKAPIRequest.h; sourceTree = "<group>"; };
+		5315649E14037853009A79E5 /* DKAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIRequest.m; path = DKAPIRequest/Classes/DKAPIRequest.m; sourceTree = "<group>"; };
+		5315649F14037853009A79E5 /* DKAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIResponse.h; path = DKAPIRequest/Classes/DKAPIResponse.h; sourceTree = "<group>"; };
+		531564A014037853009A79E5 /* DKAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIResponse.m; path = DKAPIRequest/Classes/DKAPIResponse.m; sourceTree = "<group>"; };
+		531564A114037853009A79E5 /* DKAPIStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIStub.h; path = DKAPIRequest/Classes/DKAPIStub.h; sourceTree = "<group>"; };
+		531564A214037853009A79E5 /* DKAPIStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIStub.m; path = DKAPIRequest/Classes/DKAPIStub.m; sourceTree = "<group>"; };
+		531564A914038591009A79E5 /* DKRestCacheStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestCacheStrategy.h; sourceTree = "<group>"; };
+		531564AA140387DB009A79E5 /* DKLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKLogger.h; path = DKSupport/Classes/DKLogger.h; sourceTree = "<group>"; };
+		531564AC140387DB009A79E5 /* DKPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPredicate.h; sourceTree = "<group>"; };
+		531564AD140387DB009A79E5 /* DKPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPredicate.m; sourceTree = "<group>"; };
+		531564AE140387DB009A79E5 /* DKPredicateBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPredicateBuilder.h; sourceTree = "<group>"; };
+		531564AF140387DB009A79E5 /* DKPredicateBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPredicateBuilder.m; sourceTree = "<group>"; };
+		531564B0140387DB009A79E5 /* DKSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKSupport.h; path = DKSupport/Classes/DKSupport.h; sourceTree = "<group>"; };
+		531564B2140387DB009A79E5 /* NSArray+Enumurable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Enumurable.h"; sourceTree = "<group>"; };
+		531564B3140387DB009A79E5 /* NSArray+Enumurable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Enumurable.m"; sourceTree = "<group>"; };
+		531564B5140387DB009A79E5 /* NSDate+Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Conversions.h"; sourceTree = "<group>"; };
+		531564B6140387DB009A79E5 /* NSDate+Conversions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Conversions.m"; sourceTree = "<group>"; };
+		531564B7140387DB009A79E5 /* NSDate+Initializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Initializers.h"; sourceTree = "<group>"; };
+		531564B8140387DB009A79E5 /* NSDate+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Initializers.m"; sourceTree = "<group>"; };
+		531564BA140387DB009A79E5 /* NSMutableArray+Reverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Reverse.h"; sourceTree = "<group>"; };
+		531564BB140387DB009A79E5 /* NSMutableArray+Reverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Reverse.m"; sourceTree = "<group>"; };
+		531564BD140387DB009A79E5 /* NSNumber+Initializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Initializers.h"; sourceTree = "<group>"; };
+		531564BE140387DB009A79E5 /* NSNumber+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Initializers.m"; sourceTree = "<group>"; };
+		531564C0140387DB009A79E5 /* NSObject+DelayedBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DelayedBlock.h"; sourceTree = "<group>"; };
+		531564C1140387DB009A79E5 /* NSObject+DelayedBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DelayedBlock.m"; sourceTree = "<group>"; };
+		531564C3140387DB009A79E5 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		531564C4140387DB009A79E5 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		531564C5140387DB009A79E5 /* NSString+Inflections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Inflections.h"; sourceTree = "<group>"; };
+		531564C6140387DB009A79E5 /* NSString+Inflections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Inflections.m"; sourceTree = "<group>"; };
+		531564C7140387DB009A79E5 /* NSString+Initializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Initializers.h"; sourceTree = "<group>"; };
+		531564C8140387DB009A79E5 /* NSString+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Initializers.m"; sourceTree = "<group>"; };
+		531564CA140387DB009A79E5 /* UIAlertView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Shortcuts.h"; sourceTree = "<group>"; };
+		531564CB140387DB009A79E5 /* UIAlertView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Shortcuts.m"; sourceTree = "<group>"; };
+		531564CD140387DB009A79E5 /* UIViewController+ParentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ParentController.h"; sourceTree = "<group>"; };
+		531564CE140387DB009A79E5 /* UIViewController+ParentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ParentController.m"; sourceTree = "<group>"; };
+		531564DD140387FA009A79E5 /* LoggerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerClient.h; sourceTree = "<group>"; };
+		531564DE140387FA009A79E5 /* LoggerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerClient.m; sourceTree = "<group>"; };
+		531564DF140387FA009A79E5 /* LoggerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerCommon.h; sourceTree = "<group>"; };
+		531564E214039CE7009A79E5 /* DKRestObject+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKRestObject+HTTP.h"; sourceTree = "<group>"; };
+		531564E314039CE7009A79E5 /* DKRestObject+HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+HTTP.m"; sourceTree = "<group>"; };
+		531564E514039E40009A79E5 /* DKRestObject+DELETE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKRestObject+DELETE.h"; sourceTree = "<group>"; };
+		531564E614039E40009A79E5 /* DKRestObject+DELETE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+DELETE.m"; sourceTree = "<group>"; };
+		531564E914039E40009A79E5 /* DKRestObject+POST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKRestObject+POST.h"; sourceTree = "<group>"; };
+		531564EA14039E40009A79E5 /* DKRestObject+POST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+POST.m"; sourceTree = "<group>"; };
+		531564EB14039E41009A79E5 /* DKRestObject+PUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKRestObject+PUT.h"; sourceTree = "<group>"; };
+		531564EC14039E41009A79E5 /* DKRestObject+PUT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+PUT.m"; sourceTree = "<group>"; };
 		5378749F14010A0A00D9B746 /* Specs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Specs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		537874AB14010A0A00D9B746 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		537874AF14010A0A00D9B746 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,13 +177,6 @@
 		53FFD01814011D3900E6B764 /* DKRestResourceQuerySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRestResourceQuerySpec.m; path = Specs/DKRestResourceQuerySpec.m; sourceTree = "<group>"; };
 		53FFD01C14011D4600E6B764 /* FGSpecRemoteUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGSpecRemoteUser.h; sourceTree = "<group>"; };
 		53FFD01D14011D4600E6B764 /* FGSpecRemoteUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGSpecRemoteUser.m; sourceTree = "<group>"; };
-		53FFD02114011D7500E6B764 /* DKAPIInterceptorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIInterceptorProtocol.h; path = DKAPIRequest/Classes/DKAPIInterceptorProtocol.h; sourceTree = "<group>"; };
-		53FFD02214011D7500E6B764 /* DKAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIRequest.h; path = DKAPIRequest/Classes/DKAPIRequest.h; sourceTree = "<group>"; };
-		53FFD02314011D7500E6B764 /* DKAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIRequest.m; path = DKAPIRequest/Classes/DKAPIRequest.m; sourceTree = "<group>"; };
-		53FFD02414011D7500E6B764 /* DKAPIRequestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIRequestStub.h; path = DKAPIRequest/Classes/DKAPIRequestStub.h; sourceTree = "<group>"; };
-		53FFD02514011D7500E6B764 /* DKAPIRequestStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIRequestStub.m; path = DKAPIRequest/Classes/DKAPIRequestStub.m; sourceTree = "<group>"; };
-		53FFD02614011D7500E6B764 /* DKAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIResponse.h; path = DKAPIRequest/Classes/DKAPIResponse.h; sourceTree = "<group>"; };
-		53FFD02714011D7500E6B764 /* DKAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIResponse.m; path = DKAPIRequest/Classes/DKAPIResponse.m; sourceTree = "<group>"; };
 		53FFD02C14011D7E00E6B764 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		53FFD02D14011D7E00E6B764 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		53FFD02E14011D7E00E6B764 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -152,33 +212,6 @@
 		53FFD04D14011D7E00E6B764 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		53FFD04F14011D7E00E6B764 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		53FFD05014011D7E00E6B764 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		53FFD06114011D8700E6B764 /* DKPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPredicate.h; sourceTree = "<group>"; };
-		53FFD06214011D8700E6B764 /* DKPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPredicate.m; sourceTree = "<group>"; };
-		53FFD06314011D8700E6B764 /* DKPredicateBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPredicateBuilder.h; sourceTree = "<group>"; };
-		53FFD06414011D8700E6B764 /* DKPredicateBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPredicateBuilder.m; sourceTree = "<group>"; };
-		53FFD06514011D8700E6B764 /* DKSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKSupport.h; path = DKSupport/Classes/DKSupport.h; sourceTree = "<group>"; };
-		53FFD06714011D8700E6B764 /* NSArray+Enumurable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Enumurable.h"; sourceTree = "<group>"; };
-		53FFD06814011D8700E6B764 /* NSArray+Enumurable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Enumurable.m"; sourceTree = "<group>"; };
-		53FFD06A14011D8700E6B764 /* NSDate+Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Conversions.h"; sourceTree = "<group>"; };
-		53FFD06B14011D8700E6B764 /* NSDate+Conversions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Conversions.m"; sourceTree = "<group>"; };
-		53FFD06C14011D8700E6B764 /* NSDate+Initializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Initializers.h"; sourceTree = "<group>"; };
-		53FFD06D14011D8700E6B764 /* NSDate+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Initializers.m"; sourceTree = "<group>"; };
-		53FFD06F14011D8700E6B764 /* NSMutableArray+Reverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Reverse.h"; sourceTree = "<group>"; };
-		53FFD07014011D8700E6B764 /* NSMutableArray+Reverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Reverse.m"; sourceTree = "<group>"; };
-		53FFD07214011D8700E6B764 /* NSNumber+Initializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Initializers.h"; sourceTree = "<group>"; };
-		53FFD07314011D8700E6B764 /* NSNumber+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Initializers.m"; sourceTree = "<group>"; };
-		53FFD07514011D8700E6B764 /* NSObject+DelayedBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DelayedBlock.h"; sourceTree = "<group>"; };
-		53FFD07614011D8700E6B764 /* NSObject+DelayedBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DelayedBlock.m"; sourceTree = "<group>"; };
-		53FFD07814011D8700E6B764 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
-		53FFD07914011D8700E6B764 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
-		53FFD07A14011D8700E6B764 /* NSString+Inflections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Inflections.h"; sourceTree = "<group>"; };
-		53FFD07B14011D8700E6B764 /* NSString+Inflections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Inflections.m"; sourceTree = "<group>"; };
-		53FFD07C14011D8700E6B764 /* NSString+Initializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Initializers.h"; sourceTree = "<group>"; };
-		53FFD07D14011D8700E6B764 /* NSString+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Initializers.m"; sourceTree = "<group>"; };
-		53FFD07F14011D8700E6B764 /* UIAlertView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Shortcuts.h"; sourceTree = "<group>"; };
-		53FFD08014011D8700E6B764 /* UIAlertView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Shortcuts.m"; sourceTree = "<group>"; };
-		53FFD08214011D8700E6B764 /* UIViewController+ParentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ParentController.h"; sourceTree = "<group>"; };
-		53FFD08314011D8700E6B764 /* UIViewController+ParentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ParentController.m"; sourceTree = "<group>"; };
 		53FFD09214011D8D00E6B764 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
 		53FFD09314011D8D00E6B764 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
 		53FFD09514011D8D00E6B764 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
@@ -238,6 +271,143 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5315647D140354DA009A79E5 /* DKRestObject */ = {
+			isa = PBXGroup;
+			children = (
+				53FFD00D14011CEC00E6B764 /* DKRestObjectProtocol.h */,
+				531564E214039CE7009A79E5 /* DKRestObject+HTTP.h */,
+				531564E314039CE7009A79E5 /* DKRestObject+HTTP.m */,
+				5315648114035506009A79E5 /* DKRestObject+GET.h */,
+				5315648214035506009A79E5 /* DKRestObject+GET.m */,
+				531564E514039E40009A79E5 /* DKRestObject+DELETE.h */,
+				531564E614039E40009A79E5 /* DKRestObject+DELETE.m */,
+				531564E914039E40009A79E5 /* DKRestObject+POST.h */,
+				531564EA14039E40009A79E5 /* DKRestObject+POST.m */,
+				531564EB14039E41009A79E5 /* DKRestObject+PUT.h */,
+				531564EC14039E41009A79E5 /* DKRestObject+PUT.m */,
+			);
+			name = DKRestObject;
+			sourceTree = "<group>";
+		};
+		531564AB140387DB009A79E5 /* DKPredicateBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				531564AC140387DB009A79E5 /* DKPredicate.h */,
+				531564AD140387DB009A79E5 /* DKPredicate.m */,
+				531564AE140387DB009A79E5 /* DKPredicateBuilder.h */,
+				531564AF140387DB009A79E5 /* DKPredicateBuilder.m */,
+			);
+			name = DKPredicateBuilder;
+			path = DKSupport/Classes/DKPredicateBuilder;
+			sourceTree = "<group>";
+		};
+		531564B1140387DB009A79E5 /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				531564B2140387DB009A79E5 /* NSArray+Enumurable.h */,
+				531564B3140387DB009A79E5 /* NSArray+Enumurable.m */,
+			);
+			name = NSArray;
+			path = DKSupport/Classes/NSArray;
+			sourceTree = "<group>";
+		};
+		531564B4140387DB009A79E5 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				531564B5140387DB009A79E5 /* NSDate+Conversions.h */,
+				531564B6140387DB009A79E5 /* NSDate+Conversions.m */,
+				531564B7140387DB009A79E5 /* NSDate+Initializers.h */,
+				531564B8140387DB009A79E5 /* NSDate+Initializers.m */,
+			);
+			name = NSDate;
+			path = DKSupport/Classes/NSDate;
+			sourceTree = "<group>";
+		};
+		531564B9140387DB009A79E5 /* NSMutableArray */ = {
+			isa = PBXGroup;
+			children = (
+				531564BA140387DB009A79E5 /* NSMutableArray+Reverse.h */,
+				531564BB140387DB009A79E5 /* NSMutableArray+Reverse.m */,
+			);
+			name = NSMutableArray;
+			path = DKSupport/Classes/NSMutableArray;
+			sourceTree = "<group>";
+		};
+		531564BC140387DB009A79E5 /* NSNumber */ = {
+			isa = PBXGroup;
+			children = (
+				531564BD140387DB009A79E5 /* NSNumber+Initializers.h */,
+				531564BE140387DB009A79E5 /* NSNumber+Initializers.m */,
+			);
+			name = NSNumber;
+			path = DKSupport/Classes/NSNumber;
+			sourceTree = "<group>";
+		};
+		531564BF140387DB009A79E5 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				531564C0140387DB009A79E5 /* NSObject+DelayedBlock.h */,
+				531564C1140387DB009A79E5 /* NSObject+DelayedBlock.m */,
+			);
+			name = NSObject;
+			path = DKSupport/Classes/NSObject;
+			sourceTree = "<group>";
+		};
+		531564C2140387DB009A79E5 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				531564C3140387DB009A79E5 /* NSString+Hash.h */,
+				531564C4140387DB009A79E5 /* NSString+Hash.m */,
+				531564C5140387DB009A79E5 /* NSString+Inflections.h */,
+				531564C6140387DB009A79E5 /* NSString+Inflections.m */,
+				531564C7140387DB009A79E5 /* NSString+Initializers.h */,
+				531564C8140387DB009A79E5 /* NSString+Initializers.m */,
+			);
+			name = NSString;
+			path = DKSupport/Classes/NSString;
+			sourceTree = "<group>";
+		};
+		531564C9140387DB009A79E5 /* UIAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				531564CA140387DB009A79E5 /* UIAlertView+Shortcuts.h */,
+				531564CB140387DB009A79E5 /* UIAlertView+Shortcuts.m */,
+			);
+			name = UIAlertView;
+			path = DKSupport/Classes/UIAlertView;
+			sourceTree = "<group>";
+		};
+		531564CC140387DB009A79E5 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				531564CD140387DB009A79E5 /* UIViewController+ParentController.h */,
+				531564CE140387DB009A79E5 /* UIViewController+ParentController.m */,
+			);
+			name = UIViewController;
+			path = DKSupport/Classes/UIViewController;
+			sourceTree = "<group>";
+		};
+		531564DC140387FA009A79E5 /* NSLogger */ = {
+			isa = PBXGroup;
+			children = (
+				531564DD140387FA009A79E5 /* LoggerClient.h */,
+				531564DE140387FA009A79E5 /* LoggerClient.m */,
+				531564DF140387FA009A79E5 /* LoggerCommon.h */,
+			);
+			name = NSLogger;
+			path = DKSupport/External/NSLogger;
+			sourceTree = "<group>";
+		};
+		531564E114039899009A79E5 /* DKRestRouter */ = {
+			isa = PBXGroup;
+			children = (
+				53FFD01214011CEC00E6B764 /* DKRestRouterProtocol.h */,
+				53FFD01014011CEC00E6B764 /* DKRestRouter.h */,
+				53FFD01114011CEC00E6B764 /* DKRestRouter.m */,
+			);
+			name = DKRestRouter;
+			sourceTree = "<group>";
+		};
 		5378747D140109AE00D9B746 = {
 			isa = PBXGroup;
 			children = (
@@ -263,8 +433,8 @@
 			isa = PBXGroup;
 			children = (
 				53FFD0C314011F3D00E6B764 /* libicucore.dylib */,
-				53FFD0CD14011F7C00E6B764 /* MobileCoreServices.framework */,
 				53FFD0CB14011F7200E6B764 /* libz.dylib */,
+				53FFD0CD14011F7C00E6B764 /* MobileCoreServices.framework */,
 				53FFD0C914011F6200E6B764 /* CFNetwork.framework */,
 				53FFD0C714011F5E00E6B764 /* SystemConfiguration.framework */,
 				53FFD0C514011F5100E6B764 /* CoreGraphics.framework */,
@@ -300,6 +470,7 @@
 		537874C014010A5700D9B746 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				531564DC140387FA009A79E5 /* NSLogger */,
 				53FFD09B14011EC600E6B764 /* DKFile */,
 				53FFD09A14011EC100E6B764 /* DKCoreData */,
 				53FFD09114011D8D00E6B764 /* ISO8601DateFormatter */,
@@ -342,14 +513,13 @@
 		53FFD00A14011CEC00E6B764 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				531564A914038591009A79E5 /* DKRestCacheStrategy.h */,
+				531564E114039899009A79E5 /* DKRestRouter */,
+				5315647D140354DA009A79E5 /* DKRestObject */,
 				53FFD00B14011CEC00E6B764 /* DKRestObject.h */,
 				53FFD00C14011CEC00E6B764 /* DKRestObject.m */,
-				53FFD00D14011CEC00E6B764 /* DKRestObjectProtocol.h */,
 				53FFD00E14011CEC00E6B764 /* DKRestQuery.h */,
 				53FFD00F14011CEC00E6B764 /* DKRestQuery.m */,
-				53FFD01014011CEC00E6B764 /* DKRestRouter.h */,
-				53FFD01114011CEC00E6B764 /* DKRestRouter.m */,
-				53FFD01214011CEC00E6B764 /* DKRestRouterProtocol.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -366,16 +536,17 @@
 		53FFD01F14011D5600E6B764 /* DKSupport */ = {
 			isa = PBXGroup;
 			children = (
-				53FFD06014011D8700E6B764 /* DKPredicateBuilder */,
-				53FFD06514011D8700E6B764 /* DKSupport.h */,
-				53FFD06614011D8700E6B764 /* NSArray */,
-				53FFD06914011D8700E6B764 /* NSDate */,
-				53FFD06E14011D8700E6B764 /* NSMutableArray */,
-				53FFD07114011D8700E6B764 /* NSNumber */,
-				53FFD07414011D8700E6B764 /* NSObject */,
-				53FFD07714011D8700E6B764 /* NSString */,
-				53FFD07E14011D8700E6B764 /* UIAlertView */,
-				53FFD08114011D8700E6B764 /* UIViewController */,
+				531564AA140387DB009A79E5 /* DKLogger.h */,
+				531564AB140387DB009A79E5 /* DKPredicateBuilder */,
+				531564B0140387DB009A79E5 /* DKSupport.h */,
+				531564B1140387DB009A79E5 /* NSArray */,
+				531564B4140387DB009A79E5 /* NSDate */,
+				531564B9140387DB009A79E5 /* NSMutableArray */,
+				531564BC140387DB009A79E5 /* NSNumber */,
+				531564BF140387DB009A79E5 /* NSObject */,
+				531564C2140387DB009A79E5 /* NSString */,
+				531564C9140387DB009A79E5 /* UIAlertView */,
+				531564CC140387DB009A79E5 /* UIViewController */,
 			);
 			name = DKSupport;
 			sourceTree = "<group>";
@@ -383,13 +554,22 @@
 		53FFD02014011D5B00E6B764 /* DKAPPIRequest */ = {
 			isa = PBXGroup;
 			children = (
-				53FFD02114011D7500E6B764 /* DKAPIInterceptorProtocol.h */,
-				53FFD02214011D7500E6B764 /* DKAPIRequest.h */,
-				53FFD02314011D7500E6B764 /* DKAPIRequest.m */,
-				53FFD02414011D7500E6B764 /* DKAPIRequestStub.h */,
-				53FFD02514011D7500E6B764 /* DKAPIRequestStub.m */,
-				53FFD02614011D7500E6B764 /* DKAPIResponse.h */,
-				53FFD02714011D7500E6B764 /* DKAPIResponse.m */,
+				5315649314037853009A79E5 /* DKAPICacheStrategy.h */,
+				5315649414037853009A79E5 /* DKAPIFormData.h */,
+				5315649514037853009A79E5 /* DKAPIFormData.m */,
+				5315649614037853009A79E5 /* DKAPIInterceptor.h */,
+				5315649714037853009A79E5 /* DKAPIInterceptor.m */,
+				5315649814037853009A79E5 /* DKAPIInterceptorProtocol.h */,
+				5315649914037853009A79E5 /* DKAPILogger.h */,
+				5315649A14037853009A79E5 /* DKAPIProgress.h */,
+				5315649B14037853009A79E5 /* DKAPIProgress.m */,
+				5315649C14037853009A79E5 /* DKAPIProgressProtocol.h */,
+				5315649D14037853009A79E5 /* DKAPIRequest.h */,
+				5315649E14037853009A79E5 /* DKAPIRequest.m */,
+				5315649F14037853009A79E5 /* DKAPIResponse.h */,
+				531564A014037853009A79E5 /* DKAPIResponse.m */,
+				531564A114037853009A79E5 /* DKAPIStub.h */,
+				531564A214037853009A79E5 /* DKAPIStub.m */,
 			);
 			name = DKAPPIRequest;
 			sourceTree = "<group>";
@@ -451,104 +631,6 @@
 			);
 			name = Reachability;
 			path = DKAPIRequest/External/Reachability;
-			sourceTree = "<group>";
-		};
-		53FFD06014011D8700E6B764 /* DKPredicateBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				53FFD06114011D8700E6B764 /* DKPredicate.h */,
-				53FFD06214011D8700E6B764 /* DKPredicate.m */,
-				53FFD06314011D8700E6B764 /* DKPredicateBuilder.h */,
-				53FFD06414011D8700E6B764 /* DKPredicateBuilder.m */,
-			);
-			name = DKPredicateBuilder;
-			path = DKSupport/Classes/DKPredicateBuilder;
-			sourceTree = "<group>";
-		};
-		53FFD06614011D8700E6B764 /* NSArray */ = {
-			isa = PBXGroup;
-			children = (
-				53FFD06714011D8700E6B764 /* NSArray+Enumurable.h */,
-				53FFD06814011D8700E6B764 /* NSArray+Enumurable.m */,
-			);
-			name = NSArray;
-			path = DKSupport/Classes/NSArray;
-			sourceTree = "<group>";
-		};
-		53FFD06914011D8700E6B764 /* NSDate */ = {
-			isa = PBXGroup;
-			children = (
-				53FFD06A14011D8700E6B764 /* NSDate+Conversions.h */,
-				53FFD06B14011D8700E6B764 /* NSDate+Conversions.m */,
-				53FFD06C14011D8700E6B764 /* NSDate+Initializers.h */,
-				53FFD06D14011D8700E6B764 /* NSDate+Initializers.m */,
-			);
-			name = NSDate;
-			path = DKSupport/Classes/NSDate;
-			sourceTree = "<group>";
-		};
-		53FFD06E14011D8700E6B764 /* NSMutableArray */ = {
-			isa = PBXGroup;
-			children = (
-				53FFD06F14011D8700E6B764 /* NSMutableArray+Reverse.h */,
-				53FFD07014011D8700E6B764 /* NSMutableArray+Reverse.m */,
-			);
-			name = NSMutableArray;
-			path = DKSupport/Classes/NSMutableArray;
-			sourceTree = "<group>";
-		};
-		53FFD07114011D8700E6B764 /* NSNumber */ = {
-			isa = PBXGroup;
-			children = (
-				53FFD07214011D8700E6B764 /* NSNumber+Initializers.h */,
-				53FFD07314011D8700E6B764 /* NSNumber+Initializers.m */,
-			);
-			name = NSNumber;
-			path = DKSupport/Classes/NSNumber;
-			sourceTree = "<group>";
-		};
-		53FFD07414011D8700E6B764 /* NSObject */ = {
-			isa = PBXGroup;
-			children = (
-				53FFD07514011D8700E6B764 /* NSObject+DelayedBlock.h */,
-				53FFD07614011D8700E6B764 /* NSObject+DelayedBlock.m */,
-			);
-			name = NSObject;
-			path = DKSupport/Classes/NSObject;
-			sourceTree = "<group>";
-		};
-		53FFD07714011D8700E6B764 /* NSString */ = {
-			isa = PBXGroup;
-			children = (
-				53FFD07814011D8700E6B764 /* NSString+Hash.h */,
-				53FFD07914011D8700E6B764 /* NSString+Hash.m */,
-				53FFD07A14011D8700E6B764 /* NSString+Inflections.h */,
-				53FFD07B14011D8700E6B764 /* NSString+Inflections.m */,
-				53FFD07C14011D8700E6B764 /* NSString+Initializers.h */,
-				53FFD07D14011D8700E6B764 /* NSString+Initializers.m */,
-			);
-			name = NSString;
-			path = DKSupport/Classes/NSString;
-			sourceTree = "<group>";
-		};
-		53FFD07E14011D8700E6B764 /* UIAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				53FFD07F14011D8700E6B764 /* UIAlertView+Shortcuts.h */,
-				53FFD08014011D8700E6B764 /* UIAlertView+Shortcuts.m */,
-			);
-			name = UIAlertView;
-			path = DKSupport/Classes/UIAlertView;
-			sourceTree = "<group>";
-		};
-		53FFD08114011D8700E6B764 /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				53FFD08214011D8700E6B764 /* UIViewController+ParentController.h */,
-				53FFD08314011D8700E6B764 /* UIViewController+ParentController.m */,
-			);
-			name = UIViewController;
-			path = DKSupport/Classes/UIViewController;
 			sourceTree = "<group>";
 		};
 		53FFD09114011D8D00E6B764 /* ISO8601DateFormatter */ = {
@@ -680,9 +762,6 @@
 				53FFD01914011D3900E6B764 /* DKAPIRouterSpec.m in Sources */,
 				53FFD01A14011D3900E6B764 /* DKRestResourceQuerySpec.m in Sources */,
 				53FFD01E14011D4600E6B764 /* FGSpecRemoteUser.m in Sources */,
-				53FFD02814011D7500E6B764 /* DKAPIRequest.m in Sources */,
-				53FFD02914011D7500E6B764 /* DKAPIRequestStub.m in Sources */,
-				53FFD02A14011D7500E6B764 /* DKAPIResponse.m in Sources */,
 				53FFD05114011D7E00E6B764 /* ASIAuthenticationDialog.m in Sources */,
 				53FFD05214011D7E00E6B764 /* ASIDataCompressor.m in Sources */,
 				53FFD05314011D7E00E6B764 /* ASIDataDecompressor.m in Sources */,
@@ -698,19 +777,6 @@
 				53FFD05D14011D7E00E6B764 /* SBJsonParser.m in Sources */,
 				53FFD05E14011D7E00E6B764 /* SBJsonWriter.m in Sources */,
 				53FFD05F14011D7E00E6B764 /* Reachability.m in Sources */,
-				53FFD08414011D8700E6B764 /* DKPredicate.m in Sources */,
-				53FFD08514011D8700E6B764 /* DKPredicateBuilder.m in Sources */,
-				53FFD08614011D8700E6B764 /* NSArray+Enumurable.m in Sources */,
-				53FFD08714011D8700E6B764 /* NSDate+Conversions.m in Sources */,
-				53FFD08814011D8700E6B764 /* NSDate+Initializers.m in Sources */,
-				53FFD08914011D8700E6B764 /* NSMutableArray+Reverse.m in Sources */,
-				53FFD08A14011D8700E6B764 /* NSNumber+Initializers.m in Sources */,
-				53FFD08B14011D8700E6B764 /* NSObject+DelayedBlock.m in Sources */,
-				53FFD08C14011D8700E6B764 /* NSString+Hash.m in Sources */,
-				53FFD08D14011D8700E6B764 /* NSString+Inflections.m in Sources */,
-				53FFD08E14011D8700E6B764 /* NSString+Initializers.m in Sources */,
-				53FFD08F14011D8700E6B764 /* UIAlertView+Shortcuts.m in Sources */,
-				53FFD09014011D8700E6B764 /* UIViewController+ParentController.m in Sources */,
 				53FFD09714011D8D00E6B764 /* ISO8601DateFormatter.m in Sources */,
 				53FFD09814011D8D00E6B764 /* RegexKitLite.m in Sources */,
 				53FFD09E14011ED500E6B764 /* DKFile.m in Sources */,
@@ -725,6 +791,31 @@
 				53FFD0BE14011F2200E6B764 /* FGSpecProfile.m in Sources */,
 				53FFD0BF14011F2200E6B764 /* FGSpecUser.m in Sources */,
 				53FFD0C014011F2200E6B764 /* Specs.xcdatamodeld in Sources */,
+				5315648314035506009A79E5 /* DKRestObject+GET.m in Sources */,
+				531564A314037853009A79E5 /* DKAPIFormData.m in Sources */,
+				531564A414037853009A79E5 /* DKAPIInterceptor.m in Sources */,
+				531564A514037853009A79E5 /* DKAPIProgress.m in Sources */,
+				531564A614037853009A79E5 /* DKAPIRequest.m in Sources */,
+				531564A714037853009A79E5 /* DKAPIResponse.m in Sources */,
+				531564A814037853009A79E5 /* DKAPIStub.m in Sources */,
+				531564CF140387DB009A79E5 /* DKPredicate.m in Sources */,
+				531564D0140387DB009A79E5 /* DKPredicateBuilder.m in Sources */,
+				531564D1140387DB009A79E5 /* NSArray+Enumurable.m in Sources */,
+				531564D2140387DB009A79E5 /* NSDate+Conversions.m in Sources */,
+				531564D3140387DB009A79E5 /* NSDate+Initializers.m in Sources */,
+				531564D4140387DB009A79E5 /* NSMutableArray+Reverse.m in Sources */,
+				531564D5140387DB009A79E5 /* NSNumber+Initializers.m in Sources */,
+				531564D6140387DB009A79E5 /* NSObject+DelayedBlock.m in Sources */,
+				531564D7140387DB009A79E5 /* NSString+Hash.m in Sources */,
+				531564D8140387DB009A79E5 /* NSString+Inflections.m in Sources */,
+				531564D9140387DB009A79E5 /* NSString+Initializers.m in Sources */,
+				531564DA140387DB009A79E5 /* UIAlertView+Shortcuts.m in Sources */,
+				531564DB140387DB009A79E5 /* UIViewController+ParentController.m in Sources */,
+				531564E0140387FA009A79E5 /* LoggerClient.m in Sources */,
+				531564E414039CE7009A79E5 /* DKRestObject+HTTP.m in Sources */,
+				531564ED14039E41009A79E5 /* DKRestObject+DELETE.m in Sources */,
+				531564EF14039E41009A79E5 /* DKRestObject+POST.m in Sources */,
+				531564F014039E41009A79E5 /* DKRestObject+PUT.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,7 +856,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -801,7 +892,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

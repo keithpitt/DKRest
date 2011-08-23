@@ -13,37 +13,33 @@
 
 SPEC_BEGIN(DKAPIRouterSpec)
 
-describe(@"DKAPIRouterSpec", ^{
+__block DKRestRouter * router;
+
+beforeEach(^{
+    router = [DKRestRouter new];
+    router.host = @"api.example.com";
+    router.version = @"1";
+    router.ssl = NO;
+});
+
+describe(@"-resourceFor", ^{
     
-    __block DKRestRouter * router;
-    
-    beforeEach(^{
-        router = [DKRestRouter new];
-        router.host = @"api.example.com";
-        router.version = @"1";
-        router.ssl = NO;
+    it(@"should return the correct resource for classes", ^{
+        
+        NSURL * url = [router routeFor:[FGSpecRemoteUser class]];
+        
+        expect([url absoluteString]).toEqual(@"http://api.example.com/v1/users");
+        
     });
     
-    describe(@"-resourceFor", ^{
+    it(@"should return the correct resource for instances", ^{
         
-        it(@"should return the correct resource for classes", ^{
-            
-            NSURL * url = [router routeFor:[FGSpecRemoteUser class]];
-            
-            expect([url absoluteString]).toEqual(@"http://api.example.com/v1/users");
-            
-        });
+        FGSpecRemoteUser * user = [FGSpecRemoteUser new];
+        user.identifier = [NSNumber numberWithInt:12];
         
-        it(@"should return the correct resource for instances", ^{
-            
-            FGSpecRemoteUser * user = [FGSpecRemoteUser new];
-            user.identifier = [NSNumber numberWithInt:12];
-            
-            NSURL * url = [router routeFor:user];
-            
-            expect([url absoluteString]).toEqual(@"http://api.example.com/v1/users/12");
-            
-        });
+        NSURL * url = [router routeFor:user];
+        
+        expect([url absoluteString]).toEqual(@"http://api.example.com/v1/users/12");
         
     });
     

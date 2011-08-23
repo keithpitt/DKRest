@@ -27,7 +27,7 @@
     
 }
 
-- (NSURL *)routeFor:(id<DKRestObjectProtocol>)object {
+- (NSURL *)routeFor:(id)object {
     
     NSString * path;
     

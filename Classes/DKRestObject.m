@@ -9,7 +9,9 @@
 #import "DKRestObject.h"
 
 #import "DKAPIRequest.h"
+#import "DKAPIResponse.h"
 #import "DKRestRouter.h"
+
 #import "objc/runtime.h"
 #import "NSString+Inflections.h"
 
@@ -55,166 +57,27 @@
     
 }
 
-+ (DKAPIRequest *)request:(NSString *)path
-                     data:(NSDictionary *)data
-                   object:(id)object
-                 selector:(SEL)selector
-                 complete:(DKAPIRequestSuccessCallback)completeBlock
-                    error:(DKAPIRequestErrorCallback)errorBlock
-           uploadDelegate:(id)uploadDelegate
-         downloadDelegate:(id)downloadDelegate {
++ (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod {
     
-    DKAPIRequest * request = [DKAPIRequest new];
-    
-    // Generate a url
-    NSURL * url = [[self router] routeFor:object withPath:path];
-    
-    // Set properties about the request
-    request.data = data;
-    request.successCallback = completeBlock;
-    request.errorCallback = errorBlock;
-    request.uploadProgressDelegate = uploadDelegate;
-    request.downloadProgressDelegate = downloadDelegate;
-    
-    [request performSelector:selector withObject:[url absoluteString]];
+    NSURL * url = [[self router] routeFor:self withPath:path];
+
+    DKAPIRequest * request = [[DKAPIRequest alloc] initWithURL:url
+                                                 requestMethod:requestMethod
+                                                    parameters:nil];
     
     return [request autorelease];
     
 }
 
-+ (DKAPIRequest *)get:(NSString *)path data:(NSDictionary *)data complete:(DKAPIRequestSuccessCallback)completeBlock error:(DKAPIRequestErrorCallback)errorBlock {
+- (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod {
     
-    return [self request:path data:data object:self selector:@selector(get:) complete:completeBlock error:errorBlock uploadDelegate:nil downloadDelegate:nil];
+    NSURL * url = [[[self class] router] routeFor:self withPath:path];
     
-}
-
-+ (DKAPIRequest *)get:(NSString *)path
-                 data:(NSDictionary *)data
-             complete:(DKAPIRequestSuccessCallback)completeBlock
-                error:(DKAPIRequestErrorCallback)errorBlock
-       uploadDelegate:(id)uploadDelegate
-     downloadDelegate:(id)downloadDelegate {
+    DKAPIRequest * request = [[DKAPIRequest alloc] initWithURL:url
+                                                 requestMethod:requestMethod
+                                                    parameters:nil];
     
-    return [self request:path data:data object:self selector:@selector(get:) complete:completeBlock error:errorBlock uploadDelegate:uploadDelegate downloadDelegate:downloadDelegate];
-    
-}
-
-+ (DKAPIRequest *)post:(NSString *)path data:(NSDictionary *)data complete:(DKAPIRequestSuccessCallback)completeBlock error:(DKAPIRequestErrorCallback)errorBlock {
-    
-    return [self request:path data:data object:self selector:@selector(post:) complete:completeBlock error:errorBlock uploadDelegate:nil downloadDelegate:nil];
-    
-}
-
-+ (DKAPIRequest *)post:(NSString *)path
-                  data:(NSDictionary *)data 
-              complete:(DKAPIRequestSuccessCallback)completeBlock
-                 error:(DKAPIRequestErrorCallback)errorBlock
-        uploadDelegate:(id)uploadDelegate
-      downloadDelegate:(id)downloadDelegate {
-    
-    return [self request:path data:data object:self selector:@selector(post:) complete:completeBlock error:errorBlock uploadDelegate:uploadDelegate downloadDelegate:downloadDelegate];
-    
-}
-
-+ (DKAPIRequest *)put:(NSString *)path data:(NSDictionary *)data complete:(DKAPIRequestSuccessCallback)completeBlock error:(DKAPIRequestErrorCallback)errorBlock {
-    
-    return [self request:path data:data object:self selector:@selector(put:) complete:completeBlock error:errorBlock uploadDelegate:nil downloadDelegate:nil];
-    
-}
-
-+ (DKAPIRequest *)put:(NSString *)path
-                 data:(NSDictionary *)data
-             complete:(DKAPIRequestSuccessCallback)completeBlock
-                error:(DKAPIRequestErrorCallback)errorBlock
-       uploadDelegate:(id)uploadDelegate
-     downloadDelegate:(id)downloadDelegate {
-    
-    return [self request:path data:data object:self selector:@selector(put:) complete:completeBlock error:errorBlock uploadDelegate:uploadDelegate downloadDelegate:downloadDelegate];
-    
-}
-
-+ (DKAPIRequest *)delete:(NSString *)path data:(NSDictionary *)data complete:(DKAPIRequestSuccessCallback)completeBlock error:(DKAPIRequestErrorCallback)errorBlock {
-    
-    return [self request:path data:data object:self selector:@selector(delete:) complete:completeBlock error:errorBlock uploadDelegate:nil downloadDelegate:nil];
-    
-}
-
-+ (DKAPIRequest *)delete:(NSString *)path
-                    data:(NSDictionary *)data
-                complete:(DKAPIRequestSuccessCallback)completeBlock
-                   error:(DKAPIRequestErrorCallback)errorBlock
-          uploadDelegate:(id)uploadDelegate
-        downloadDelegate:(id)downloadDelegate {
-    
-    return [self request:path data:data object:self selector:@selector(delete:) complete:completeBlock error:errorBlock uploadDelegate:uploadDelegate downloadDelegate:downloadDelegate];
-    
-}
-
-- (DKAPIRequest *)get:(NSString *)path data:(NSDictionary *)data complete:(DKAPIRequestSuccessCallback)completeBlock error:(DKAPIRequestErrorCallback)errorBlock {
-    
-    return [[self class] request:path data:data object:self selector:@selector(get:) complete:completeBlock error:errorBlock uploadDelegate:nil downloadDelegate:nil];
-    
-}
-
-- (DKAPIRequest *)get:(NSString *)path
-                 data:(NSDictionary *)data
-             complete:(DKAPIRequestSuccessCallback)completeBlock
-                error:(DKAPIRequestErrorCallback)errorBlock
-       uploadDelegate:(id)uploadDelegate
-     downloadDelegate:(id)downloadDelegate {
-    
-    return [[self class] request:path data:data object:self selector:@selector(get:) complete:completeBlock error:errorBlock uploadDelegate:uploadDelegate downloadDelegate:downloadDelegate];
-    
-}
-
-- (DKAPIRequest *)post:(NSString *)path data:(NSDictionary *)data complete:(DKAPIRequestSuccessCallback)completeBlock error:(DKAPIRequestErrorCallback)errorBlock {
-    
-    return [[self class] request:path data:data object:self selector:@selector(post:) complete:completeBlock error:errorBlock uploadDelegate:nil downloadDelegate:nil];
-    
-}
-
-- (DKAPIRequest *)post:(NSString *)path
-                  data:(NSDictionary *)data
-              complete:(DKAPIRequestSuccessCallback)completeBlock
-                 error:(DKAPIRequestErrorCallback)errorBlock
-        uploadDelegate:(id)uploadDelegate
-      downloadDelegate:(id)downloadDelegate {
-    
-    return [[self class] request:path data:data object:self selector:@selector(post:) complete:completeBlock error:errorBlock uploadDelegate:uploadDelegate downloadDelegate:downloadDelegate];
-    
-}
-
-- (DKAPIRequest *)put:(NSString *)path data:(NSDictionary *)data complete:(DKAPIRequestSuccessCallback)completeBlock error:(DKAPIRequestErrorCallback)errorBlock {
-    
-    return [[self class] request:path data:data object:self selector:@selector(put:) complete:completeBlock error:errorBlock uploadDelegate:nil downloadDelegate:nil];
-    
-}
-
-- (DKAPIRequest *)put:(NSString *)path
-                 data:(NSDictionary *)data
-             complete:(DKAPIRequestSuccessCallback)completeBlock
-                error:(DKAPIRequestErrorCallback)errorBlock
-       uploadDelegate:(id)uploadDelegate
-     downloadDelegate:(id)downloadDelegate {
-    
-    return [[self class] request:path data:data object:self selector:@selector(put:) complete:completeBlock error:errorBlock uploadDelegate:uploadDelegate downloadDelegate:downloadDelegate];
-    
-}
-
-- (DKAPIRequest *)delete:(NSString *)path data:(NSDictionary *)data complete:(DKAPIRequestSuccessCallback)completeBlock error:(DKAPIRequestErrorCallback)errorBlock {
-    
-    return [[self class] request:path data:data object:self selector:@selector(delete:) complete:completeBlock error:errorBlock uploadDelegate:nil downloadDelegate:nil];
-    
-}
-
-- (DKAPIRequest *)delete:(NSString *)path
-                    data:(NSDictionary *)data
-                complete:(DKAPIRequestSuccessCallback)completeBlock
-                   error:(DKAPIRequestErrorCallback)errorBlock
-          uploadDelegate:(id)uploadDelegate
-        downloadDelegate:(id)downloadDelegate {
-    
-    return [[self class] request:path data:data object:self selector:@selector(delete:) complete:completeBlock error:errorBlock uploadDelegate:uploadDelegate downloadDelegate:downloadDelegate];
+    return [request autorelease];
     
 }
 
@@ -327,48 +190,59 @@
     
 }
 
-- (DKAPIRequest *)save:(DKAPIRequestSuccessCallback)successBlock error:(DKAPIRequestErrorCallback)errorBlock {
+- (DKAPIRequest *)save:(DKAPIRequestFinishBlock)finishBlock {
     
-    return [self save:successBlock error:errorBlock uploadDelegate:nil downloadDelegate:nil];
+    return [self save:finishBlock delegate:nil];
     
 }
 
-- (DKAPIRequest *)save:(DKAPIRequestSuccessCallback)successBlock error:(DKAPIRequestErrorCallback)errorBlock uploadDelegate:(id)uploadDelegate downloadDelegate:(id)downloadDelegate {
+- (DKAPIRequest *)save:(DKAPIRequestFinishBlock)finishBlock delegate:(id)delegate {
     
     // While we're saving, hold onto the object
     [self retain];
     
-    bool wasPersisted = [self isPersisted];
+    bool persisted = [self isPersisted];
     
-    if (!wasPersisted)
+    if (!persisted)
         [self beforeCreate];
     else
         [self beforeUpdate];
     
     [self beforeSave];
     
-    NSDictionary * data = [NSDictionary dictionaryWithObject:[self attributesToPost] forKey:[[self class] resourceName]];
+    // Create the request
+    DKAPIRequest * request = [[self class] requestWithPath:@"" requestMethod:@"POST"];
     
-    DKAPIRequest * request = [self post:nil data:data complete:^(DKAPIResponse * response) {
+    // request.delegate = delegate;
+    
+    // Add params
+    request.parameters = [NSDictionary dictionaryWithObject:[self attributesToPost] forKey:[[self class] resourceName]];
+    
+    // Add the finish block
+    request.finishBlock = ^(DKAPIResponse * response, NSError * error) {
         
-        [self afterSave:response];
+        // Successs?
+        if (response) {
+            
+            // Call the after save callback
+            [self afterSave:response];
+            
+            // Switch between afterCreate and afterUpdate
+            if (!persisted)
+                [self afterCreate:response];
+            else
+                [self afterUpdate:response];
+            
+        }
         
-        if (!wasPersisted)
-            [self afterCreate:response];
-        else
-            [self afterUpdate:response];
-        
-        successBlock(response);
+        finishBlock(response, error);
         
         [self release];
         
-    } error:^(DKAPIResponse * response) {
-        
-        errorBlock(response);
-        
-        [self release];
-        
-    } uploadDelegate:uploadDelegate downloadDelegate:downloadDelegate];
+    };
+    
+    // Start the request
+    [request startAsynchronous];
     
     return request;
     

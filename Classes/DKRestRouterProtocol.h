@@ -10,7 +10,7 @@
 
 @protocol DKRestRouterProtocol <NSObject>
 
-- (NSURL *)routeFor:(id <DKRestObjectProtocol>)object;
-- (NSURL *)routeFor:(id <DKRestObjectProtocol>)object withPath:(NSString *)path;
+- (NSURL *)routeFor:(id)object;
+- (NSURL *)routeFor:(id)object withPath:(NSString *)path;
 
 @end

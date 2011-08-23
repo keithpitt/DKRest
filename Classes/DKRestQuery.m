@@ -10,11 +10,13 @@
 
 #import "DKRestObject.h"
 #import "DKCoreDataImporter.h"
+#import "DKAPIResponse.h"
+
 #import "NSString+Inflections.h"
 
 @implementation DKRestQuery
 
-@synthesize restClass, successBlock, errorBlock, search, downloadCache;
+@synthesize restClass, finishBlock, search, downloadCache;
 
 - (id)initWithClass:(Class)klass {
     
@@ -126,110 +128,103 @@
     
 }
 
-- (void)perform:(DKQueryPerformSuccess)success error:(DKQueryPerformError)error {
+- (void)perform:(DKQueryFinishBlock)block {
     
-    [self perform:success error:error cache:NO uploadDelegate:nil downloadDelegate:nil];
-    
-}
-
-- (void)perform:(DKQueryPerformSuccess)success error:(DKQueryPerformError)error cache:(BOOL)cache {
-    
-    [self perform:success error:error cache:cache uploadDelegate:nil downloadDelegate:nil];
+    return [self perform:block cacheStrategy:DKRestCacheStrategyNone delegate:nil];
     
 }
 
-- (void)perform:(DKQueryPerformSuccess)success error:(DKQueryPerformError)error cache:(BOOL)cache uploadDelegate:(id)uploadDelegate downloadDelegate:(id)downloadDelegate {
+- (void)perform:(DKQueryFinishBlock)block cacheStrategy:(DKRestCacheStrategy)cache {
+    
+    return [self perform:block cacheStrategy:cache delegate:nil];
+    
+}
+
+- (void)perform:(DKQueryFinishBlock)block cacheStrategy:(DKRestCacheStrategy)cache delegate:(id)delegate {
     
     [self retain];
     
     // Copy the success block (we should always have one)
-    self.successBlock = Block_copy(success);
+    self.finishBlock = Block_copy(block);
     
-    // If there is a error block
-    if (error)
-        self.errorBlock = Block_copy(error);
+    // Grab the router for the resource
+    id <DKRestRouterProtocol> router = [self.restClass performSelector:@selector(router)];
     
     // Create a new API request
     DKAPIRequest * request = [DKAPIRequest new];
     
-    // Set the post data.
-    // TODO: This should toggle between simple and meta search
-    if (self.search) {
-        request.data = [self metaSearchPostData];
-    } else {
-        request.data = [self simplePostData];
+    request.delegate = delegate;
+    request.requestMethod = HTTP_GET_VERB;
+    request.url = [router performSelector:@selector(routeFor:) withObject:restClass];
+    
+    // Are we caching this response?
+    if (cache == DKRestCacheStrategyPersisted || cache == DKRestCacheStrategySession) {
+        
+        if (cache == DKRestCacheStrategyPersisted)
+            request.cacheStrategy = DKAPICacheStrategyPersisted;
+        else if (cache == DKRestCacheStrategySession)
+            request.cacheStrategy = DKAPICacheStrategySession;
+    
+        request.downloadCache = downloadCache;
+        
     }
     
-    request.uploadProgressDelegate = uploadDelegate;
-    request.downloadProgressDelegate = downloadDelegate;
+    // Set the post data.
+    if (self.search)
+        request.parameters = [self metaSearchPostData];
+    else
+        request.parameters = [self simplePostData];
     
-    request.cachePolicy = ASIOnlyLoadIfNotCachedCachePolicy;
-    request.cacheStoragePolicy = ASICachePermanentlyCacheStoragePolicy;
-    request.downloadCache = self.downloadCache;
-    
-    // The success callback
-    request.successCallback = ^(DKAPIResponse * response) {
-        
-        // The response data
-        NSArray * data = (NSArray*)response.data;
-        
-        // Run the success block with the rest resources
-        NSArray * resources = [self convertToRestResources:data];
-        
-        void (^finished)(void) = ^ {
+    request.finishBlock = ^(DKAPIResponse * response, NSError * error) {
+      
+        if (!error) {
             
-            // Call the success block with the resources
-            self.successBlock(resources);
+            // The response data
+            NSArray * data = (NSArray*)response.data;
             
-            // Release the request
-            [request release];
+            // Run the success block with the rest resources
+            NSArray * resources = [self convertToRestResources:data];
             
-            // Release ourself
-            [self release];
+            void (^finished)(void) = ^ {
+                
+                // Call the success block with the resources
+                self.finishBlock(resources, error);
+                
+                // Release ourself
+                [self release];
+                
+                // Last sync date
+                [self setLastPerformDate:[NSDate date]];
+                
+            };
             
-            // Last sync date
-            [self setLastPerformDate:[NSDate date]];
-            
-        };
-        
-        if (cache) {
-            
-            // Start importing the data
-            [self importData:data success:finished];
+            if (cache == DKRestCacheStrategyCoreData) {
+                
+                // Start importing the data
+                [self importData:data success:finished];
+                
+            } else {
+                
+                // Lets just finish up
+                finished();
+                
+            }
             
         } else {
             
-            // Lets just finish up
-            finished();
+            finishBlock(nil, error);
+            
+            [self release];
             
         }
         
     };
     
-    // The error callback
-    request.errorCallback = ^(DKAPIResponse * response) {
-        
-        // Call the failure block with the response if we have one
-        if (self.errorBlock) {
-            self.errorBlock(response.error);
-        }
-        
-        // Release the request
-        [request release];
-        
-        // Release self
-        [self release];
-        
-    };
+    // Kick off the request
+    [request startAsynchronous];
     
-    // Grab the URL for the resource
-    id router = [self.restClass performSelector:@selector(router)];
-    
-    // Find the URL to post to
-    NSURL * url = [router performSelector:@selector(routeFor:) withObject:restClass];
-    
-    // Perform the request
-    [request get:[url absoluteString]];
+    // Release it
+    [request release];
     
 }
 

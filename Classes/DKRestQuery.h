@@ -6,22 +6,23 @@
 //  Copyright 2011 Mostly Disco. All rights reserved.
 //
 
+#import "ASIDownloadCache.h"
+
 #import "DKPredicateBuilder.h"
 #import "DKAPIRequest.h"
-#import "ASIDownloadCache.h"
+#import "DKRestCacheStrategy.h"
 
 @interface DKRestQuery : DKPredicateBuilder
 
 @property (nonatomic, assign) BOOL search;
 @property (nonatomic, assign) Class restClass;
-@property (nonatomic, assign) DKQueryPerformSuccess successBlock;
-@property (nonatomic, assign) DKQueryPerformError errorBlock;
+@property (nonatomic, assign) DKQueryFinishBlock finishBlock;
 @property (nonatomic, readonly) ASIDownloadCache * downloadCache;
 
 - (id)initWithClass:(Class)klass;
 
-- (void)perform:(DKQueryPerformSuccess)success error:(DKQueryPerformError)error;
-- (void)perform:(DKQueryPerformSuccess)success error:(DKQueryPerformError)error cache:(BOOL)cache;
-- (void)perform:(DKQueryPerformSuccess)success error:(DKQueryPerformError)error cache:(BOOL)cache uploadDelegate:(id)uploadDelegate downloadDelegate:(id)downloadDelegate;
+- (void)perform:(DKQueryFinishBlock)block;
+- (void)perform:(DKQueryFinishBlock)block cacheStrategy:(DKRestCacheStrategy)cache;
+- (void)perform:(DKQueryFinishBlock)block cacheStrategy:(DKRestCacheStrategy)cache delegate:(id)delegate;
 
 @end
