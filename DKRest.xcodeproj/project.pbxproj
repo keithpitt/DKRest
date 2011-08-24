@@ -32,6 +32,13 @@
 		531564ED14039E41009A79E5 /* DKRestObject+DELETE.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564E614039E40009A79E5 /* DKRestObject+DELETE.m */; };
 		531564EF14039E41009A79E5 /* DKRestObject+POST.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564EA14039E40009A79E5 /* DKRestObject+POST.m */; };
 		531564F014039E41009A79E5 /* DKRestObject+PUT.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564EC14039E41009A79E5 /* DKRestObject+PUT.m */; };
+		531564FA1403A17D009A79E5 /* ImportableUsers.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F31403A17D009A79E5 /* ImportableUsers.json */; };
+		531564FB1403A17D009A79E5 /* InvalidCafesFormat.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F41403A17D009A79E5 /* InvalidCafesFormat.json */; };
+		531564FC1403A17D009A79E5 /* NonExistantModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F51403A17D009A79E5 /* NonExistantModel.json */; };
+		531564FD1403A17D009A79E5 /* OddNumberOfUsers.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F61403A17D009A79E5 /* OddNumberOfUsers.json */; };
+		531564FE1403A17D009A79E5 /* UsersWithComments.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F71403A17D009A79E5 /* UsersWithComments.json */; };
+		531564FF1403A17D009A79E5 /* UsersWithNameKeithPitt.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F81403A17D009A79E5 /* UsersWithNameKeithPitt.json */; };
+		531565001403A17E009A79E5 /* UsersWithNoIdentifiers.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F91403A17D009A79E5 /* UsersWithNoIdentifiers.json */; };
 		537874B014010A0A00D9B746 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 537874AF14010A0A00D9B746 /* main.m */; };
 		537874BD14010A1F00D9B746 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537874BC14010A1F00D9B746 /* UIKit.framework */; };
 		537874BF14010A2500D9B746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537874BE14010A2500D9B746 /* Foundation.framework */; };
@@ -141,6 +148,13 @@
 		531564EB14039E41009A79E5 /* DKRestObject+PUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKRestObject+PUT.h"; sourceTree = "<group>"; };
 		531564EC14039E41009A79E5 /* DKRestObject+PUT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+PUT.m"; sourceTree = "<group>"; };
 		531564F114039F95009A79E5 /* DKRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRest.h; sourceTree = "<group>"; };
+		531564F31403A17D009A79E5 /* ImportableUsers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ImportableUsers.json; sourceTree = "<group>"; };
+		531564F41403A17D009A79E5 /* InvalidCafesFormat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InvalidCafesFormat.json; sourceTree = "<group>"; };
+		531564F51403A17D009A79E5 /* NonExistantModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NonExistantModel.json; sourceTree = "<group>"; };
+		531564F61403A17D009A79E5 /* OddNumberOfUsers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OddNumberOfUsers.json; sourceTree = "<group>"; };
+		531564F71403A17D009A79E5 /* UsersWithComments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersWithComments.json; sourceTree = "<group>"; };
+		531564F81403A17D009A79E5 /* UsersWithNameKeithPitt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersWithNameKeithPitt.json; sourceTree = "<group>"; };
+		531564F91403A17D009A79E5 /* UsersWithNoIdentifiers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersWithNoIdentifiers.json; sourceTree = "<group>"; };
 		5378749F14010A0A00D9B746 /* Specs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Specs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		537874AB14010A0A00D9B746 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		537874AF14010A0A00D9B746 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -409,6 +423,21 @@
 			name = DKRestRouter;
 			sourceTree = "<group>";
 		};
+		531564F21403A17D009A79E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				531564F31403A17D009A79E5 /* ImportableUsers.json */,
+				531564F41403A17D009A79E5 /* InvalidCafesFormat.json */,
+				531564F51403A17D009A79E5 /* NonExistantModel.json */,
+				531564F61403A17D009A79E5 /* OddNumberOfUsers.json */,
+				531564F71403A17D009A79E5 /* UsersWithComments.json */,
+				531564F81403A17D009A79E5 /* UsersWithNameKeithPitt.json */,
+				531564F91403A17D009A79E5 /* UsersWithNoIdentifiers.json */,
+			);
+			name = Data;
+			path = External/DKCoreData/Specs/Data;
+			sourceTree = SOURCE_ROOT;
+		};
 		5378747D140109AE00D9B746 = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +479,7 @@
 		537874A914010A0A00D9B746 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				531564F21403A17D009A79E5 /* Data */,
 				53FFD0AB14011F2200E6B764 /* Models */,
 				537874AA14010A0A00D9B746 /* Support */,
 				53FFD01B14011D4600E6B764 /* Resources */,
@@ -747,6 +777,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531564FA1403A17D009A79E5 /* ImportableUsers.json in Resources */,
+				531564FB1403A17D009A79E5 /* InvalidCafesFormat.json in Resources */,
+				531564FC1403A17D009A79E5 /* NonExistantModel.json in Resources */,
+				531564FD1403A17D009A79E5 /* OddNumberOfUsers.json in Resources */,
+				531564FE1403A17D009A79E5 /* UsersWithComments.json in Resources */,
+				531564FF1403A17D009A79E5 /* UsersWithNameKeithPitt.json in Resources */,
+				531565001403A17E009A79E5 /* UsersWithNoIdentifiers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

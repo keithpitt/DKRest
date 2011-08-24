@@ -19,13 +19,10 @@
 SPEC_BEGIN(DKRestObjectQuerySpec)
 
 __block NSArray * users;
-__block NSDictionary * json;
 
 beforeEach(^{
     
     users = [[DKFile jsonFromBundle:nil pathForResource:@"UsersWithNameKeithPitt"] retain];
-    
-    json = [NSDictionary dictionaryWithObject:users forKey:@"response"];
      
 });
 
@@ -48,12 +45,8 @@ describe(@"-perform:error:cache:", ^{
             
             expect([apiRequest.formDataRequest.url absoluteString]).toEqual(@"http://api.example.com/v1/dkrestobjects?first_name=Keith&last_name=Pitt");
             
-            return [DKAPIResponse responseWithResponseDictionary:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                                  @"ok", @"status",
-                                                                  @"response", json,
-                                                                  @"errors", [NSArray array],
-                                                                  nil]];
-            
+            return [DKAPIResponse responseWithStatus:@"ok" data:users errors:nil];
+                        
         }];
         
         [restQuery perform:^(NSArray * records, NSError * error) {
