@@ -12,3 +12,5 @@
 #import "DKRestObject+POST.h"
 #import "DKRestObject+PUT.h"
 #import "DKRestObject+DELETE.h"
+
+#import "DKAPIResponse.h"
