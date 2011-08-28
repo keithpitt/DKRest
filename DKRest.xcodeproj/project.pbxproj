@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5315648314035506009A79E5 /* DKRestObject+GET.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315648214035506009A79E5 /* DKRestObject+GET.m */; };
-		531564A314037853009A79E5 /* DKAPIFormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315649514037853009A79E5 /* DKAPIFormData.m */; };
-		531564A414037853009A79E5 /* DKAPIInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315649714037853009A79E5 /* DKAPIInterceptor.m */; };
-		531564A514037853009A79E5 /* DKAPIProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315649B14037853009A79E5 /* DKAPIProgress.m */; };
-		531564A614037853009A79E5 /* DKAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315649E14037853009A79E5 /* DKAPIRequest.m */; };
-		531564A714037853009A79E5 /* DKAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564A014037853009A79E5 /* DKAPIResponse.m */; };
-		531564A814037853009A79E5 /* DKAPIStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564A214037853009A79E5 /* DKAPIStub.m */; };
 		531564CF140387DB009A79E5 /* DKPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564AD140387DB009A79E5 /* DKPredicate.m */; };
 		531564D0140387DB009A79E5 /* DKPredicateBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564AF140387DB009A79E5 /* DKPredicateBuilder.m */; };
 		531564D1140387DB009A79E5 /* NSArray+Enumurable.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564B3140387DB009A79E5 /* NSArray+Enumurable.m */; };
@@ -44,6 +38,13 @@
 		537874BF14010A2500D9B746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537874BE14010A2500D9B746 /* Foundation.framework */; };
 		537874D514010A5700D9B746 /* Cedar-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537874C114010A5700D9B746 /* Cedar-iPhone.framework */; };
 		537874D614010A5700D9B746 /* libExpecta-ios-universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 537874D214010A5700D9B746 /* libExpecta-ios-universal.a */; };
+		53876BBB140A2237009F8171 /* DKAPIFormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BAB140A2237009F8171 /* DKAPIFormData.m */; };
+		53876BBC140A2237009F8171 /* DKAPIInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BAF140A2237009F8171 /* DKAPIInterceptor.m */; };
+		53876BBD140A2237009F8171 /* DKAPIProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BB3140A2237009F8171 /* DKAPIProgress.m */; };
+		53876BBE140A2237009F8171 /* DKAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BB6140A2237009F8171 /* DKAPIRequest.m */; };
+		53876BBF140A2237009F8171 /* DKAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BB8140A2237009F8171 /* DKAPIResponse.m */; };
+		53876BC0140A2237009F8171 /* DKAPIStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BBA140A2237009F8171 /* DKAPIStub.m */; };
+		53876BC4140A2297009F8171 /* DKRestObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BC3140A2297009F8171 /* DKRestObjectSpec.m */; };
 		53FFD01314011CEC00E6B764 /* DKRestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD00C14011CEC00E6B764 /* DKRestObject.m */; };
 		53FFD01414011CEC00E6B764 /* DKRestQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD00F14011CEC00E6B764 /* DKRestQuery.m */; };
 		53FFD01514011CEC00E6B764 /* DKRestRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01114011CEC00E6B764 /* DKRestRouter.m */; };
@@ -91,22 +92,6 @@
 /* Begin PBXFileReference section */
 		5315648114035506009A79E5 /* DKRestObject+GET.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKRestObject+GET.h"; sourceTree = "<group>"; };
 		5315648214035506009A79E5 /* DKRestObject+GET.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+GET.m"; sourceTree = "<group>"; };
-		5315649314037853009A79E5 /* DKAPICacheStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPICacheStrategy.h; path = DKAPIRequest/Classes/DKAPICacheStrategy.h; sourceTree = "<group>"; };
-		5315649414037853009A79E5 /* DKAPIFormData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIFormData.h; path = DKAPIRequest/Classes/DKAPIFormData.h; sourceTree = "<group>"; };
-		5315649514037853009A79E5 /* DKAPIFormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIFormData.m; path = DKAPIRequest/Classes/DKAPIFormData.m; sourceTree = "<group>"; };
-		5315649614037853009A79E5 /* DKAPIInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIInterceptor.h; path = DKAPIRequest/Classes/DKAPIInterceptor.h; sourceTree = "<group>"; };
-		5315649714037853009A79E5 /* DKAPIInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIInterceptor.m; path = DKAPIRequest/Classes/DKAPIInterceptor.m; sourceTree = "<group>"; };
-		5315649814037853009A79E5 /* DKAPIInterceptorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIInterceptorProtocol.h; path = DKAPIRequest/Classes/DKAPIInterceptorProtocol.h; sourceTree = "<group>"; };
-		5315649914037853009A79E5 /* DKAPILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPILogger.h; path = DKAPIRequest/Classes/DKAPILogger.h; sourceTree = "<group>"; };
-		5315649A14037853009A79E5 /* DKAPIProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIProgress.h; path = DKAPIRequest/Classes/DKAPIProgress.h; sourceTree = "<group>"; };
-		5315649B14037853009A79E5 /* DKAPIProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIProgress.m; path = DKAPIRequest/Classes/DKAPIProgress.m; sourceTree = "<group>"; };
-		5315649C14037853009A79E5 /* DKAPIProgressProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIProgressProtocol.h; path = DKAPIRequest/Classes/DKAPIProgressProtocol.h; sourceTree = "<group>"; };
-		5315649D14037853009A79E5 /* DKAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIRequest.h; path = DKAPIRequest/Classes/DKAPIRequest.h; sourceTree = "<group>"; };
-		5315649E14037853009A79E5 /* DKAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIRequest.m; path = DKAPIRequest/Classes/DKAPIRequest.m; sourceTree = "<group>"; };
-		5315649F14037853009A79E5 /* DKAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIResponse.h; path = DKAPIRequest/Classes/DKAPIResponse.h; sourceTree = "<group>"; };
-		531564A014037853009A79E5 /* DKAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIResponse.m; path = DKAPIRequest/Classes/DKAPIResponse.m; sourceTree = "<group>"; };
-		531564A114037853009A79E5 /* DKAPIStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIStub.h; path = DKAPIRequest/Classes/DKAPIStub.h; sourceTree = "<group>"; };
-		531564A214037853009A79E5 /* DKAPIStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIStub.m; path = DKAPIRequest/Classes/DKAPIStub.m; sourceTree = "<group>"; };
 		531564A914038591009A79E5 /* DKRestCacheStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestCacheStrategy.h; sourceTree = "<group>"; };
 		531564AA140387DB009A79E5 /* DKLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKLogger.h; path = DKSupport/Classes/DKLogger.h; sourceTree = "<group>"; };
 		531564AC140387DB009A79E5 /* DKPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPredicate.h; sourceTree = "<group>"; };
@@ -180,6 +165,25 @@
 		537874D214010A5700D9B746 /* libExpecta-ios-universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libExpecta-ios-universal.a"; sourceTree = "<group>"; };
 		537874D314010A5700D9B746 /* NSObject+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Expecta.h"; sourceTree = "<group>"; };
 		537874D414010A5700D9B746 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Expecta.h"; sourceTree = "<group>"; };
+		53876BA9140A2237009F8171 /* DKAPICacheStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPICacheStrategy.h; path = DKAPIRequest/Classes/DKAPICacheStrategy.h; sourceTree = "<group>"; };
+		53876BAA140A2237009F8171 /* DKAPIFormData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIFormData.h; path = DKAPIRequest/Classes/DKAPIFormData.h; sourceTree = "<group>"; };
+		53876BAB140A2237009F8171 /* DKAPIFormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIFormData.m; path = DKAPIRequest/Classes/DKAPIFormData.m; sourceTree = "<group>"; };
+		53876BAC140A2237009F8171 /* DKAPIFormDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIFormDataProtocol.h; path = DKAPIRequest/Classes/DKAPIFormDataProtocol.h; sourceTree = "<group>"; };
+		53876BAD140A2237009F8171 /* DKAPIFormDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIFormDataType.h; path = DKAPIRequest/Classes/DKAPIFormDataType.h; sourceTree = "<group>"; };
+		53876BAE140A2237009F8171 /* DKAPIInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIInterceptor.h; path = DKAPIRequest/Classes/DKAPIInterceptor.h; sourceTree = "<group>"; };
+		53876BAF140A2237009F8171 /* DKAPIInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIInterceptor.m; path = DKAPIRequest/Classes/DKAPIInterceptor.m; sourceTree = "<group>"; };
+		53876BB0140A2237009F8171 /* DKAPIInterceptorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIInterceptorProtocol.h; path = DKAPIRequest/Classes/DKAPIInterceptorProtocol.h; sourceTree = "<group>"; };
+		53876BB1140A2237009F8171 /* DKAPILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPILogger.h; path = DKAPIRequest/Classes/DKAPILogger.h; sourceTree = "<group>"; };
+		53876BB2140A2237009F8171 /* DKAPIProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIProgress.h; path = DKAPIRequest/Classes/DKAPIProgress.h; sourceTree = "<group>"; };
+		53876BB3140A2237009F8171 /* DKAPIProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIProgress.m; path = DKAPIRequest/Classes/DKAPIProgress.m; sourceTree = "<group>"; };
+		53876BB4140A2237009F8171 /* DKAPIProgressProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIProgressProtocol.h; path = DKAPIRequest/Classes/DKAPIProgressProtocol.h; sourceTree = "<group>"; };
+		53876BB5140A2237009F8171 /* DKAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIRequest.h; path = DKAPIRequest/Classes/DKAPIRequest.h; sourceTree = "<group>"; };
+		53876BB6140A2237009F8171 /* DKAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIRequest.m; path = DKAPIRequest/Classes/DKAPIRequest.m; sourceTree = "<group>"; };
+		53876BB7140A2237009F8171 /* DKAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIResponse.h; path = DKAPIRequest/Classes/DKAPIResponse.h; sourceTree = "<group>"; };
+		53876BB8140A2237009F8171 /* DKAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIResponse.m; path = DKAPIRequest/Classes/DKAPIResponse.m; sourceTree = "<group>"; };
+		53876BB9140A2237009F8171 /* DKAPIStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIStub.h; path = DKAPIRequest/Classes/DKAPIStub.h; sourceTree = "<group>"; };
+		53876BBA140A2237009F8171 /* DKAPIStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIStub.m; path = DKAPIRequest/Classes/DKAPIStub.m; sourceTree = "<group>"; };
+		53876BC3140A2297009F8171 /* DKRestObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRestObjectSpec.m; path = Specs/DKRestObjectSpec.m; sourceTree = "<group>"; };
 		53FFD00B14011CEC00E6B764 /* DKRestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestObject.h; sourceTree = "<group>"; };
 		53FFD00C14011CEC00E6B764 /* DKRestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRestObject.m; sourceTree = "<group>"; };
 		53FFD00D14011CEC00E6B764 /* DKRestObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestObjectProtocol.h; sourceTree = "<group>"; };
@@ -445,6 +449,7 @@
 				537874A914010A0A00D9B746 /* Specs */,
 				53FFD01714011D3900E6B764 /* DKAPIRouterSpec.m */,
 				53FFD01814011D3900E6B764 /* DKRestResourceQuerySpec.m */,
+				53876BC3140A2297009F8171 /* DKRestObjectSpec.m */,
 				537874C014010A5700D9B746 /* External */,
 				537874A214010A0A00D9B746 /* Frameworks */,
 				537874A014010A0A00D9B746 /* Products */,
@@ -586,22 +591,24 @@
 		53FFD02014011D5B00E6B764 /* DKAPPIRequest */ = {
 			isa = PBXGroup;
 			children = (
-				5315649314037853009A79E5 /* DKAPICacheStrategy.h */,
-				5315649414037853009A79E5 /* DKAPIFormData.h */,
-				5315649514037853009A79E5 /* DKAPIFormData.m */,
-				5315649614037853009A79E5 /* DKAPIInterceptor.h */,
-				5315649714037853009A79E5 /* DKAPIInterceptor.m */,
-				5315649814037853009A79E5 /* DKAPIInterceptorProtocol.h */,
-				5315649914037853009A79E5 /* DKAPILogger.h */,
-				5315649A14037853009A79E5 /* DKAPIProgress.h */,
-				5315649B14037853009A79E5 /* DKAPIProgress.m */,
-				5315649C14037853009A79E5 /* DKAPIProgressProtocol.h */,
-				5315649D14037853009A79E5 /* DKAPIRequest.h */,
-				5315649E14037853009A79E5 /* DKAPIRequest.m */,
-				5315649F14037853009A79E5 /* DKAPIResponse.h */,
-				531564A014037853009A79E5 /* DKAPIResponse.m */,
-				531564A114037853009A79E5 /* DKAPIStub.h */,
-				531564A214037853009A79E5 /* DKAPIStub.m */,
+				53876BA9140A2237009F8171 /* DKAPICacheStrategy.h */,
+				53876BAA140A2237009F8171 /* DKAPIFormData.h */,
+				53876BAB140A2237009F8171 /* DKAPIFormData.m */,
+				53876BAC140A2237009F8171 /* DKAPIFormDataProtocol.h */,
+				53876BAD140A2237009F8171 /* DKAPIFormDataType.h */,
+				53876BAE140A2237009F8171 /* DKAPIInterceptor.h */,
+				53876BAF140A2237009F8171 /* DKAPIInterceptor.m */,
+				53876BB0140A2237009F8171 /* DKAPIInterceptorProtocol.h */,
+				53876BB1140A2237009F8171 /* DKAPILogger.h */,
+				53876BB2140A2237009F8171 /* DKAPIProgress.h */,
+				53876BB3140A2237009F8171 /* DKAPIProgress.m */,
+				53876BB4140A2237009F8171 /* DKAPIProgressProtocol.h */,
+				53876BB5140A2237009F8171 /* DKAPIRequest.h */,
+				53876BB6140A2237009F8171 /* DKAPIRequest.m */,
+				53876BB7140A2237009F8171 /* DKAPIResponse.h */,
+				53876BB8140A2237009F8171 /* DKAPIResponse.m */,
+				53876BB9140A2237009F8171 /* DKAPIStub.h */,
+				53876BBA140A2237009F8171 /* DKAPIStub.m */,
 			);
 			name = DKAPPIRequest;
 			sourceTree = "<group>";
@@ -831,12 +838,6 @@
 				53FFD0BF14011F2200E6B764 /* FGSpecUser.m in Sources */,
 				53FFD0C014011F2200E6B764 /* Specs.xcdatamodeld in Sources */,
 				5315648314035506009A79E5 /* DKRestObject+GET.m in Sources */,
-				531564A314037853009A79E5 /* DKAPIFormData.m in Sources */,
-				531564A414037853009A79E5 /* DKAPIInterceptor.m in Sources */,
-				531564A514037853009A79E5 /* DKAPIProgress.m in Sources */,
-				531564A614037853009A79E5 /* DKAPIRequest.m in Sources */,
-				531564A714037853009A79E5 /* DKAPIResponse.m in Sources */,
-				531564A814037853009A79E5 /* DKAPIStub.m in Sources */,
 				531564CF140387DB009A79E5 /* DKPredicate.m in Sources */,
 				531564D0140387DB009A79E5 /* DKPredicateBuilder.m in Sources */,
 				531564D1140387DB009A79E5 /* NSArray+Enumurable.m in Sources */,
@@ -855,6 +856,13 @@
 				531564ED14039E41009A79E5 /* DKRestObject+DELETE.m in Sources */,
 				531564EF14039E41009A79E5 /* DKRestObject+POST.m in Sources */,
 				531564F014039E41009A79E5 /* DKRestObject+PUT.m in Sources */,
+				53876BBB140A2237009F8171 /* DKAPIFormData.m in Sources */,
+				53876BBC140A2237009F8171 /* DKAPIInterceptor.m in Sources */,
+				53876BBD140A2237009F8171 /* DKAPIProgress.m in Sources */,
+				53876BBE140A2237009F8171 /* DKAPIRequest.m in Sources */,
+				53876BBF140A2237009F8171 /* DKAPIResponse.m in Sources */,
+				53876BC0140A2237009F8171 /* DKAPIStub.m in Sources */,
+				53876BC4140A2297009F8171 /* DKRestObjectSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

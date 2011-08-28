@@ -152,25 +152,18 @@
         NSString * propertyName = [NSString stringWithCString:property_getName(property)
                                                      encoding:NSASCIIStringEncoding];
         
-        NSString * attributeName = [propertyName underscore];
-        
-        id value = [self valueForKey:propertyName];
-        
-        // If the property is another DKRestObject
-        if ([value isKindOfClass:[DKRestObject class]]) {
-            
-            attributeName = [attributeName stringByAppendingFormat:@"_id"];
-            [attributes setValue:[value valueForKey:@"identifier"] forKey:attributeName];
-            
-        } else {
-            
-            [attributes setValue:value forKey:attributeName];
-            
-        }
+        [attributes setValue:[self valueForKey:propertyName]
+                      forKey:[propertyName underscore]];
         
     }
     
     return attributes;
+    
+}
+
+- (id)formData:(DKAPIFormData *)formData valueForKey:(NSString *)key {
+    
+    return [self valueForKey:@"identifier"];
     
 }
 

@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 
 #import "DKAPIRequest.h"
+#import "DKAPIFormDataProtocol.h"
 
 #import "DKRestRouterProtocol.h"
 #import "DKRestObjectProtocol.h"
 #import "DKRestQuery.h"
 
-@interface DKRestObject : NSObject <DKRestObjectProtocol>
+@interface DKRestObject : NSObject <DKRestObjectProtocol, DKAPIFormDataProtocol>
 
 + (id<DKRestRouterProtocol>)router;
 
