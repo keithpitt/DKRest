@@ -18,8 +18,6 @@
     request.delegate = delegate;
     
     [request startAsynchronous];
-    
-    [request release];
 
 }
 
