@@ -1,5 +1,5 @@
 //
-//  DKRestObjectQuerySpec.m
+//  DKRestQuerySpec.m
 //  DiscoKit
 //
 //  Created by Keith Pitt on 12/07/11.
@@ -8,6 +8,7 @@
 
 #import "SpecHelper.h"
 
+#import "DKRestQuery.h"
 #import "FGSpecUser.h"
 
 #import "DKRestObject.h"
@@ -16,19 +17,48 @@
 #import "DKAPIStub.h"
 #import "DKAPIRequest.h"
 
-SPEC_BEGIN(DKRestObjectQuerySpec)
+SPEC_BEGIN(DKRestQuerySpec)
 
-__block NSArray * users;
+__block DKRestQuery * restQuery;
 
 beforeEach(^{
     
-    users = [[DKFile jsonFromBundle:nil pathForResource:@"UsersWithNameKeithPitt"] retain];
-     
+    restQuery = [[DKRestQuery alloc] init];
+    
+    [restQuery where:@"name" equals:@"keith"];
+    [restQuery where:@"count" greaterThan:[NSNumber numberWithInt:12]];
+    [restQuery where:@"username" isNull:NO];
+    
+});
+
+context(@"-compoundPredicateKey", ^{
+    
+    it(@"should return a unique key for the predicate", ^{
+        
+        expect([restQuery compoundPredicateKey]).toEqual(@"06B2D8BB9C2B5EE01FA4D70C3D06F8E0");
+        
+    });
+    
+});
+
+context(@"lastPerformDate", ^{
+    
+    it(@"should return the last perform date", ^{
+        
+        NSDate * now = [NSDate date];
+        [restQuery setLastPerformDate:now];
+        
+        expect(restQuery.lastPerformDate).toEqual(now);
+        
+    });
+    
 });
 
 describe(@"-perform:error:cache:", ^{
     
     it(@"should download results and store them in core data", ^{
+        
+        NSArray * users = [[DKFile jsonFromBundle:nil pathForResource:@"UsersWithNameKeithPitt"] retain];
         
         [FGSpecUser destroyAll];
         
@@ -46,7 +76,7 @@ describe(@"-perform:error:cache:", ^{
             expect([apiRequest.formDataRequest.url absoluteString]).toEqual(@"http://api.example.com/v1/dkrestobjects?first_name=Keith&last_name=Pitt");
             
             return [DKAPIResponse responseWithStatus:@"ok" data:users errors:nil];
-                        
+            
         }];
         
         [restQuery perform:^(NSArray * records, NSError * error) {

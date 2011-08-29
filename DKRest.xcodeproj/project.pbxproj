@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5315648314035506009A79E5 /* DKRestObject+GET.m in Sources */ = {isa = PBXBuildFile; fileRef = 5315648214035506009A79E5 /* DKRestObject+GET.m */; };
-		531564CF140387DB009A79E5 /* DKPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564AD140387DB009A79E5 /* DKPredicate.m */; };
-		531564D0140387DB009A79E5 /* DKPredicateBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564AF140387DB009A79E5 /* DKPredicateBuilder.m */; };
 		531564D1140387DB009A79E5 /* NSArray+Enumurable.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564B3140387DB009A79E5 /* NSArray+Enumurable.m */; };
 		531564D2140387DB009A79E5 /* NSDate+Conversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564B6140387DB009A79E5 /* NSDate+Conversions.m */; };
 		531564D3140387DB009A79E5 /* NSDate+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 531564B8140387DB009A79E5 /* NSDate+Initializers.m */; };
@@ -33,6 +31,11 @@
 		531564FE1403A17D009A79E5 /* UsersWithComments.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F71403A17D009A79E5 /* UsersWithComments.json */; };
 		531564FF1403A17D009A79E5 /* UsersWithNameKeithPitt.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F81403A17D009A79E5 /* UsersWithNameKeithPitt.json */; };
 		531565001403A17E009A79E5 /* UsersWithNoIdentifiers.json in Resources */ = {isa = PBXBuildFile; fileRef = 531564F91403A17D009A79E5 /* UsersWithNoIdentifiers.json */; };
+		53247FAD140B634300C33061 /* DKRestQuerySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53247FAC140B634300C33061 /* DKRestQuerySpec.m */; };
+		53247FC2140B72D400C33061 /* DKArrayQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 53247FBB140B72D400C33061 /* DKArrayQuery.m */; };
+		53247FC3140B72D400C33061 /* DKPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53247FBD140B72D400C33061 /* DKPredicate.m */; };
+		53247FC4140B72D400C33061 /* DKPredicateBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 53247FBF140B72D400C33061 /* DKPredicateBuilder.m */; };
+		53247FC5140B72D400C33061 /* NSArray+ArrayQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 53247FC1140B72D400C33061 /* NSArray+ArrayQuery.m */; };
 		537874B014010A0A00D9B746 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 537874AF14010A0A00D9B746 /* main.m */; };
 		537874BD14010A1F00D9B746 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537874BC14010A1F00D9B746 /* UIKit.framework */; };
 		537874BF14010A2500D9B746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537874BE14010A2500D9B746 /* Foundation.framework */; };
@@ -49,7 +52,6 @@
 		53FFD01414011CEC00E6B764 /* DKRestQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD00F14011CEC00E6B764 /* DKRestQuery.m */; };
 		53FFD01514011CEC00E6B764 /* DKRestRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01114011CEC00E6B764 /* DKRestRouter.m */; };
 		53FFD01914011D3900E6B764 /* DKAPIRouterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01714011D3900E6B764 /* DKAPIRouterSpec.m */; };
-		53FFD01A14011D3900E6B764 /* DKRestResourceQuerySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01814011D3900E6B764 /* DKRestResourceQuerySpec.m */; };
 		53FFD01E14011D4600E6B764 /* FGSpecRemoteUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01D14011D4600E6B764 /* FGSpecRemoteUser.m */; };
 		53FFD05114011D7E00E6B764 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD02D14011D7E00E6B764 /* ASIAuthenticationDialog.m */; };
 		53FFD05214011D7E00E6B764 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD03014011D7E00E6B764 /* ASIDataCompressor.m */; };
@@ -94,10 +96,6 @@
 		5315648214035506009A79E5 /* DKRestObject+GET.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+GET.m"; sourceTree = "<group>"; };
 		531564A914038591009A79E5 /* DKRestCacheStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestCacheStrategy.h; sourceTree = "<group>"; };
 		531564AA140387DB009A79E5 /* DKLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKLogger.h; path = DKSupport/Classes/DKLogger.h; sourceTree = "<group>"; };
-		531564AC140387DB009A79E5 /* DKPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPredicate.h; sourceTree = "<group>"; };
-		531564AD140387DB009A79E5 /* DKPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPredicate.m; sourceTree = "<group>"; };
-		531564AE140387DB009A79E5 /* DKPredicateBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPredicateBuilder.h; sourceTree = "<group>"; };
-		531564AF140387DB009A79E5 /* DKPredicateBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPredicateBuilder.m; sourceTree = "<group>"; };
 		531564B0140387DB009A79E5 /* DKSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKSupport.h; path = DKSupport/Classes/DKSupport.h; sourceTree = "<group>"; };
 		531564B2140387DB009A79E5 /* NSArray+Enumurable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Enumurable.h"; sourceTree = "<group>"; };
 		531564B3140387DB009A79E5 /* NSArray+Enumurable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Enumurable.m"; sourceTree = "<group>"; };
@@ -140,6 +138,15 @@
 		531564F71403A17D009A79E5 /* UsersWithComments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersWithComments.json; sourceTree = "<group>"; };
 		531564F81403A17D009A79E5 /* UsersWithNameKeithPitt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersWithNameKeithPitt.json; sourceTree = "<group>"; };
 		531564F91403A17D009A79E5 /* UsersWithNoIdentifiers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersWithNoIdentifiers.json; sourceTree = "<group>"; };
+		53247FAC140B634300C33061 /* DKRestQuerySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRestQuerySpec.m; path = Specs/DKRestQuerySpec.m; sourceTree = "<group>"; };
+		53247FBA140B72D400C33061 /* DKArrayQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKArrayQuery.h; path = DKPredicateBuilder/Classes/DKArrayQuery.h; sourceTree = "<group>"; };
+		53247FBB140B72D400C33061 /* DKArrayQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKArrayQuery.m; path = DKPredicateBuilder/Classes/DKArrayQuery.m; sourceTree = "<group>"; };
+		53247FBC140B72D400C33061 /* DKPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKPredicate.h; path = DKPredicateBuilder/Classes/DKPredicate.h; sourceTree = "<group>"; };
+		53247FBD140B72D400C33061 /* DKPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKPredicate.m; path = DKPredicateBuilder/Classes/DKPredicate.m; sourceTree = "<group>"; };
+		53247FBE140B72D400C33061 /* DKPredicateBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKPredicateBuilder.h; path = DKPredicateBuilder/Classes/DKPredicateBuilder.h; sourceTree = "<group>"; };
+		53247FBF140B72D400C33061 /* DKPredicateBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKPredicateBuilder.m; path = DKPredicateBuilder/Classes/DKPredicateBuilder.m; sourceTree = "<group>"; };
+		53247FC0140B72D400C33061 /* NSArray+ArrayQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+ArrayQuery.h"; path = "DKPredicateBuilder/Classes/NSArray+ArrayQuery.h"; sourceTree = "<group>"; };
+		53247FC1140B72D400C33061 /* NSArray+ArrayQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+ArrayQuery.m"; path = "DKPredicateBuilder/Classes/NSArray+ArrayQuery.m"; sourceTree = "<group>"; };
 		5378749F14010A0A00D9B746 /* Specs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Specs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		537874AB14010A0A00D9B746 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		537874AF14010A0A00D9B746 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -193,7 +200,6 @@
 		53FFD01114011CEC00E6B764 /* DKRestRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRestRouter.m; sourceTree = "<group>"; };
 		53FFD01214011CEC00E6B764 /* DKRestRouterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestRouterProtocol.h; sourceTree = "<group>"; };
 		53FFD01714011D3900E6B764 /* DKAPIRouterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIRouterSpec.m; path = Specs/DKAPIRouterSpec.m; sourceTree = "<group>"; };
-		53FFD01814011D3900E6B764 /* DKRestResourceQuerySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRestResourceQuerySpec.m; path = Specs/DKRestResourceQuerySpec.m; sourceTree = "<group>"; };
 		53FFD01C14011D4600E6B764 /* FGSpecRemoteUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGSpecRemoteUser.h; sourceTree = "<group>"; };
 		53FFD01D14011D4600E6B764 /* FGSpecRemoteUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGSpecRemoteUser.m; sourceTree = "<group>"; };
 		53FFD02C14011D7E00E6B764 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -306,18 +312,6 @@
 				531564EC14039E41009A79E5 /* DKRestObject+PUT.m */,
 			);
 			name = DKRestObject;
-			sourceTree = "<group>";
-		};
-		531564AB140387DB009A79E5 /* DKPredicateBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				531564AC140387DB009A79E5 /* DKPredicate.h */,
-				531564AD140387DB009A79E5 /* DKPredicate.m */,
-				531564AE140387DB009A79E5 /* DKPredicateBuilder.h */,
-				531564AF140387DB009A79E5 /* DKPredicateBuilder.m */,
-			);
-			name = DKPredicateBuilder;
-			path = DKSupport/Classes/DKPredicateBuilder;
 			sourceTree = "<group>";
 		};
 		531564B1140387DB009A79E5 /* NSArray */ = {
@@ -442,13 +436,28 @@
 			path = External/DKCoreData/Specs/Data;
 			sourceTree = SOURCE_ROOT;
 		};
+		53247FB9140B72BF00C33061 /* DKPredicateBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				53247FBA140B72D400C33061 /* DKArrayQuery.h */,
+				53247FBB140B72D400C33061 /* DKArrayQuery.m */,
+				53247FBC140B72D400C33061 /* DKPredicate.h */,
+				53247FBD140B72D400C33061 /* DKPredicate.m */,
+				53247FBE140B72D400C33061 /* DKPredicateBuilder.h */,
+				53247FBF140B72D400C33061 /* DKPredicateBuilder.m */,
+				53247FC0140B72D400C33061 /* NSArray+ArrayQuery.h */,
+				53247FC1140B72D400C33061 /* NSArray+ArrayQuery.m */,
+			);
+			name = DKPredicateBuilder;
+			sourceTree = "<group>";
+		};
 		5378747D140109AE00D9B746 = {
 			isa = PBXGroup;
 			children = (
 				53FFD00A14011CEC00E6B764 /* Classes */,
 				537874A914010A0A00D9B746 /* Specs */,
 				53FFD01714011D3900E6B764 /* DKAPIRouterSpec.m */,
-				53FFD01814011D3900E6B764 /* DKRestResourceQuerySpec.m */,
+				53247FAC140B634300C33061 /* DKRestQuerySpec.m */,
 				53876BC3140A2297009F8171 /* DKRestObjectSpec.m */,
 				537874C014010A5700D9B746 /* External */,
 				537874A214010A0A00D9B746 /* Frameworks */,
@@ -506,6 +515,7 @@
 		537874C014010A5700D9B746 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				53247FB9140B72BF00C33061 /* DKPredicateBuilder */,
 				531564DC140387FA009A79E5 /* NSLogger */,
 				53FFD09B14011EC600E6B764 /* DKFile */,
 				53FFD09A14011EC100E6B764 /* DKCoreData */,
@@ -574,7 +584,6 @@
 			isa = PBXGroup;
 			children = (
 				531564AA140387DB009A79E5 /* DKLogger.h */,
-				531564AB140387DB009A79E5 /* DKPredicateBuilder */,
 				531564B0140387DB009A79E5 /* DKSupport.h */,
 				531564B1140387DB009A79E5 /* NSArray */,
 				531564B4140387DB009A79E5 /* NSDate */,
@@ -806,7 +815,6 @@
 				53FFD01414011CEC00E6B764 /* DKRestQuery.m in Sources */,
 				53FFD01514011CEC00E6B764 /* DKRestRouter.m in Sources */,
 				53FFD01914011D3900E6B764 /* DKAPIRouterSpec.m in Sources */,
-				53FFD01A14011D3900E6B764 /* DKRestResourceQuerySpec.m in Sources */,
 				53FFD01E14011D4600E6B764 /* FGSpecRemoteUser.m in Sources */,
 				53FFD05114011D7E00E6B764 /* ASIAuthenticationDialog.m in Sources */,
 				53FFD05214011D7E00E6B764 /* ASIDataCompressor.m in Sources */,
@@ -838,8 +846,6 @@
 				53FFD0BF14011F2200E6B764 /* FGSpecUser.m in Sources */,
 				53FFD0C014011F2200E6B764 /* Specs.xcdatamodeld in Sources */,
 				5315648314035506009A79E5 /* DKRestObject+GET.m in Sources */,
-				531564CF140387DB009A79E5 /* DKPredicate.m in Sources */,
-				531564D0140387DB009A79E5 /* DKPredicateBuilder.m in Sources */,
 				531564D1140387DB009A79E5 /* NSArray+Enumurable.m in Sources */,
 				531564D2140387DB009A79E5 /* NSDate+Conversions.m in Sources */,
 				531564D3140387DB009A79E5 /* NSDate+Initializers.m in Sources */,
@@ -863,6 +869,11 @@
 				53876BBF140A2237009F8171 /* DKAPIResponse.m in Sources */,
 				53876BC0140A2237009F8171 /* DKAPIStub.m in Sources */,
 				53876BC4140A2297009F8171 /* DKRestObjectSpec.m in Sources */,
+				53247FAD140B634300C33061 /* DKRestQuerySpec.m in Sources */,
+				53247FC2140B72D400C33061 /* DKArrayQuery.m in Sources */,
+				53247FC3140B72D400C33061 /* DKPredicate.m in Sources */,
+				53247FC4140B72D400C33061 /* DKPredicateBuilder.m in Sources */,
+				53247FC5140B72D400C33061 /* NSArray+ArrayQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

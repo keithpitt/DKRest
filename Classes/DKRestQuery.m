@@ -13,10 +13,13 @@
 #import "DKAPIResponse.h"
 
 #import "NSString+Inflections.h"
+#import "NSString+Hash.h"
 
 @implementation DKRestQuery
 
 @synthesize restClass, finishBlock, search, downloadCache;
+
+@synthesize lastPerformDate;
 
 - (id)initWithClass:(Class)klass {
     
@@ -238,6 +241,29 @@
     }
     
     return [ASIDownloadCache sharedCache];
+    
+}
+
+- (NSString *)compoundPredicateKey {
+    
+    return [[self.compoundPredicate predicateFormat] md5];
+    
+}
+
+- (void)setLastPerformDate:(NSDate *)value {
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    [userDefaults setValue:value forKey:[NSString stringWithFormat:@"DKRestQuery/%@", [self compoundPredicateKey]]];
+    [userDefaults synchronize];
+    
+}
+
+- (NSDate *)lastPerformDate {
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    return (NSDate *)[userDefaults valueForKey:[NSString stringWithFormat:@"DKRestQuery/%@", [self compoundPredicateKey]]];
     
 }
 

@@ -19,10 +19,14 @@
 @property (nonatomic, assign) DKQueryFinishBlock finishBlock;
 @property (nonatomic, readonly) ASIDownloadCache * downloadCache;
 
+@property (nonatomic, copy) NSDate * lastPerformDate;
+
 - (id)initWithClass:(Class)klass;
 
 - (void)perform:(DKQueryFinishBlock)block;
 - (void)perform:(DKQueryFinishBlock)block cacheStrategy:(DKRestCacheStrategy)cache;
 - (void)perform:(DKQueryFinishBlock)block cacheStrategy:(DKRestCacheStrategy)cache delegate:(id)delegate;
+
+- (NSString *)compoundPredicateKey;
 
 @end
