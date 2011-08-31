@@ -185,13 +185,17 @@
             // The response data
             NSArray * data = (NSArray*)response.data;
             
-            // Run the success block with the rest resources
-            NSArray * resources = [self convertToRestResources:data];
-            
             void (^finished)(void) = ^ {
                 
-                // Call the success block with the resources
-                self.finishBlock(resources, error);
+                if (self.finishBlock) {
+                
+                    // Run the success block with the rest resources
+                    NSArray * resources = [self convertToRestResources:data];
+                    
+                    // Call the success block with the resources
+                    self.finishBlock(resources, error);
+                    
+                }
                 
                 // Release ourself
                 [self release];

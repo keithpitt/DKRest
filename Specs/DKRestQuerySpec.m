@@ -56,7 +56,7 @@ context(@"lastPerformDate", ^{
     
 });
 
-describe(@"-perform:error:cache:", ^{
+describe(@"-perform:cacheStrategy:", ^{
     
     it(@"should download results and store them in core data", ^{
         
@@ -96,6 +96,16 @@ describe(@"-perform:error:cache:", ^{
         expect([results count]).toEqual(10);
         
         expect(restQuery.lastPerformDate).Not.toBeNil();
+        
+    });
+    
+    it(@"should not die if you don't provide a finish block", ^{
+        
+        [DKAPIStub stubWithBlock:^(DKAPIRequest * apiRequest) {
+            return [DKAPIResponse responseWithStatus:@"ok" data:nil errors:nil];
+        }];
+        
+        [[DKRestObject query] perform:nil cacheStrategy:DKRestCacheStrategyCoreData];
         
     });
     
