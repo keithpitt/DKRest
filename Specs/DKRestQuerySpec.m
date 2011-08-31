@@ -13,6 +13,8 @@
 
 #import "DKRestObject.h"
 #import "DKFile.h"
+#import "DKFile+JSON.h"
+
 #import "DKAPIResponse.h"
 #import "DKAPIStub.h"
 #import "DKAPIRequest.h"
