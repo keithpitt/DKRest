@@ -21,6 +21,12 @@ static dispatch_once_t once;
 
 static NSMutableDictionary * resourceConfigurations = nil;
 
++ (void)resetResourceConfiguration {
+    
+    [resourceConfigurations removeObjectForKey:[self description]];
+    
+}
+
 + (DKRestConfiguration *)resourceConfiguration {
         
     dispatch_once(&once, ^ { 
@@ -117,6 +123,41 @@ static NSMutableDictionary * resourceConfigurations = nil;
     
 }
 
+- (id)build:(id)firstObject, ... {
+    
+    if ((self = [self init])) {
+        
+        // Copy the argument list
+        va_list argumentList;
+        va_start(argumentList, firstObject);
+        
+        NSMutableArray * objects = [NSMutableArray array];
+        NSMutableArray * keys = [NSMutableArray array];
+        
+        int i = 0;
+        for (id object = firstObject; object != nil; object = va_arg(argumentList, id)) {
+            
+            // Alternate between keys and objects
+            if (i % 2 == 0)
+                [objects addObject:object];    
+            else
+                [keys addObject:object];
+            
+            i++;
+        }
+        
+        // Clean up
+        va_end(argumentList);
+        
+        // Set the values
+        [self setValuesForKeysWithDictionary:[NSDictionary dictionaryWithObjects:objects forKeys:keys]];
+        
+    }
+    
+    return self;
+    
+}
+
 - (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod {
     
     DKRestConfiguration * config = [[self class] resourceConfiguration];
@@ -135,7 +176,9 @@ static NSMutableDictionary * resourceConfigurations = nil;
 
 - (void)setId:(id)identifier {
     
-    [self setValue:identifier forKey:@"identifier"];
+    DKRestConfiguration * config = [[self class] resourceConfiguration];
+    
+    [self setValue:identifier forKey:config.primaryKey];
     
 }
 
@@ -186,12 +229,6 @@ static NSMutableDictionary * resourceConfigurations = nil;
     
 }
 
-- (NSDictionary *)attributesToPost {
-    
-    return [self attributes];
-    
-}
-
 - (NSDictionary *)attributes {
     
     NSMutableDictionary * attributes = [NSMutableDictionary dictionary];
@@ -217,7 +254,9 @@ static NSMutableDictionary * resourceConfigurations = nil;
 
 - (id)formData:(DKAPIFormData *)formData valueForParameter:(NSString *)key {
     
-    return [self valueForKey:@"identifier"];
+    DKRestConfiguration * config = [[self class] resourceConfiguration];
+    
+    return [self valueForKey:config.primaryKey];
     
 }
 
@@ -272,10 +311,10 @@ static NSMutableDictionary * resourceConfigurations = nil;
     // Create the request
     DKAPIRequest * request = [[self class] requestWithPath:@"" requestMethod:@"POST"];
     
-    // request.delegate = delegate;
+    request.delegate = delegate;
     
     // Add params
-    request.parameters = [NSDictionary dictionaryWithObject:[self attributesToPost] forKey:config.resourceName];
+    request.parameters = config.postParametersBlock(self);
     
     // Add the finish block
     request.finishBlock = ^(DKAPIResponse * response, NSError * error) {
@@ -304,6 +343,12 @@ static NSMutableDictionary * resourceConfigurations = nil;
     [request startAsynchronous];
     
     return request;
+    
+}
+
+- (NSString *)description {
+    
+    return [NSString stringWithFormat:@"<%@: %@>", [[self class] description], [self attributes]];
     
 }
 

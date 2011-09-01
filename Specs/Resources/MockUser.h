@@ -10,4 +10,9 @@
 
 @interface MockUser : DKRestObject
 
+@property (nonatomic, copy) NSString * identifier;
+
+@property (nonatomic, copy) NSString * firstName;
+@property (nonatomic, copy) NSString * lastName;
+
 @end

@@ -26,7 +26,8 @@
 + (DKRestQuery *)searchWithPath:(NSString *)path;
 
 + (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod;
-- (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod;
+
+- (id)build:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (void)setId:(id)identifier;
 
@@ -39,9 +40,10 @@
 - (void)afterUpdate:(DKAPIResponse *)response;
 - (void)afterSave:(DKAPIResponse *)response;
 
-- (NSDictionary *)attributesToPost;
 - (NSDictionary *)attributes;
 - (void)setAttributes:(NSDictionary *)attributes;
+
+- (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod;
 
 - (DKAPIRequest *)save:(DKAPIRequestFinishBlock)finishBlock;
 - (DKAPIRequest *)save:(DKAPIRequestFinishBlock)finishBlock delegate:(id)delegate;

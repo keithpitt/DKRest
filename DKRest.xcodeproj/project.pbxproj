@@ -53,6 +53,7 @@
 		53876BC4140A2297009F8171 /* DKRestObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BC3140A2297009F8171 /* DKRestObjectSpec.m */; };
 		53BF7298140F3CDE00A63EA0 /* DKRestConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BF7297140F3CDE00A63EA0 /* DKRestConfiguration.m */; };
 		53BF72A0140F6E4200A63EA0 /* MockUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BF729F140F6E4200A63EA0 /* MockUser.m */; };
+		53BF72A3140F7F0200A63EA0 /* DKRestConfigurationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BF72A2140F7F0200A63EA0 /* DKRestConfigurationSpec.m */; };
 		53FFD01314011CEC00E6B764 /* DKRestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD00C14011CEC00E6B764 /* DKRestObject.m */; };
 		53FFD01414011CEC00E6B764 /* DKRestQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD00F14011CEC00E6B764 /* DKRestQuery.m */; };
 		53FFD01514011CEC00E6B764 /* DKRestServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01114011CEC00E6B764 /* DKRestServer.m */; };
@@ -197,6 +198,7 @@
 		53BF7297140F3CDE00A63EA0 /* DKRestConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRestConfiguration.m; sourceTree = "<group>"; };
 		53BF729E140F6E4200A63EA0 /* MockUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockUser.h; sourceTree = "<group>"; };
 		53BF729F140F6E4200A63EA0 /* MockUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockUser.m; sourceTree = "<group>"; };
+		53BF72A2140F7F0200A63EA0 /* DKRestConfigurationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRestConfigurationSpec.m; path = Specs/DKRestConfigurationSpec.m; sourceTree = "<group>"; };
 		53FFD00B14011CEC00E6B764 /* DKRestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestObject.h; sourceTree = "<group>"; };
 		53FFD00C14011CEC00E6B764 /* DKRestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRestObject.m; sourceTree = "<group>"; };
 		53FFD00E14011CEC00E6B764 /* DKRestQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestQuery.h; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				537874A914010A0A00D9B746 /* Specs */,
 				53247FAC140B634300C33061 /* DKRestQuerySpec.m */,
 				53876BC3140A2297009F8171 /* DKRestObjectSpec.m */,
+				53BF72A2140F7F0200A63EA0 /* DKRestConfigurationSpec.m */,
 				537874C014010A5700D9B746 /* External */,
 				537874A214010A0A00D9B746 /* Frameworks */,
 				537874A014010A0A00D9B746 /* Products */,
@@ -851,6 +854,7 @@
 				53628411140E0879006ABF3E /* DKFile+JSON.m in Sources */,
 				53BF7298140F3CDE00A63EA0 /* DKRestConfiguration.m in Sources */,
 				53BF72A0140F6E4200A63EA0 /* MockUser.m in Sources */,
+				53BF72A3140F7F0200A63EA0 /* DKRestConfigurationSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

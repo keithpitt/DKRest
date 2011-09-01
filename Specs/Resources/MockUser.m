@@ -10,6 +10,8 @@
 
 @implementation MockUser
 
+@synthesize identifier, firstName, lastName;
+
 + (void)configureResource:(DKRestConfiguration *)config {
     
     [config resourceName:@"user"];

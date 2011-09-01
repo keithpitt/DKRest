@@ -14,7 +14,7 @@
 
 @implementation DKRestConfiguration
 
-@synthesize restServer, resourcePathBlock, resourceName, primaryKey, propertiesBlock,
+@synthesize restServer, resourcePathBlock, resourceName, primaryKey, postParametersBlock,
             resourceFromDataObject, resourceVersion;
 
 - (id)init {
@@ -87,11 +87,9 @@
         
         // Defualt property list
         
-        [self postProperties:^(DKRestObject * object) {
-            
-            NSLog(@"CALCULATE PROPERTIES FOR: %@", object);
+        [self postParameters:^(DKRestObject * object) {
 
-            return [NSDictionary dictionary];
+            return [object attributes];
 
         }];
         
@@ -168,13 +166,13 @@
 
 }
 
-- (void)postProperties:(DKRestPropertiesBlock)block {
+- (void)postParameters:(DKRestParametersBlock)block {
     
-    // If we already have a properties block
-    if (propertiesBlock)
-        Block_release(propertiesBlock);
+    // If we already have a parameters block
+    if (postParametersBlock)
+        Block_release(postParametersBlock);
     
-    propertiesBlock = Block_copy(block);
+    postParametersBlock = Block_copy(block);
     
 }
 
@@ -203,7 +201,7 @@
     [resourceName release];
     
     Block_release(resourcePathBlock);
-    Block_release(propertiesBlock);
+    Block_release(postParametersBlock);
     Block_release(resourceFromDataObject);
 }
 

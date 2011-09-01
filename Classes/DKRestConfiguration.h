@@ -12,7 +12,7 @@
 @class DKRestServer;
 
 typedef NSString * (^DKRestResourcePathBlock)(id);
-typedef NSDictionary * (^DKRestPropertiesBlock)(id);
+typedef NSDictionary * (^DKRestParametersBlock)(id);
 typedef DKRestObject * (^DKRestResourceFromObjectBlock)(NSDictionary *);
 
 @interface DKRestConfiguration : NSObject {
@@ -27,7 +27,7 @@ typedef DKRestObject * (^DKRestResourceFromObjectBlock)(NSDictionary *);
 @property (nonatomic, readonly) NSString * primaryKey;
 
 @property (nonatomic, readonly) DKRestResourcePathBlock resourcePathBlock;
-@property (nonatomic, readonly) DKRestPropertiesBlock propertiesBlock;
+@property (nonatomic, readonly) DKRestParametersBlock postParametersBlock;
 @property (nonatomic, readonly) DKRestResourceFromObjectBlock resourceFromDataObject;
 
 - (id)initWithRestClass:(Class)klass;
@@ -43,7 +43,7 @@ typedef DKRestObject * (^DKRestResourceFromObjectBlock)(NSDictionary *);
 - (void)resourcePath:(NSString *)path;
 - (void)resourcePathWithBlock:(DKRestResourcePathBlock)block;
 
-- (void)postProperties:(DKRestPropertiesBlock)block;
+- (void)postParameters:(DKRestParametersBlock)block;
 
 - (void)mapProperty:(NSString *)property toParameter:(NSString *)param;
 - (void)mapProperty:(NSString *)property toParameter:(NSString *)param nestObjects:(BOOL)nestObjects;
