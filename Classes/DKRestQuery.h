@@ -16,12 +16,13 @@
 
 @property (nonatomic, assign) BOOL search;
 @property (nonatomic, assign) Class restClass;
+@property (nonatomic, assign) NSURL * queryURL;
 @property (nonatomic, assign) DKQueryFinishBlock finishBlock;
 @property (nonatomic, readonly) ASIDownloadCache * downloadCache;
 
 @property (nonatomic, copy) NSDate * lastPerformDate;
 
-- (id)initWithClass:(Class)klass;
+- (id)initWithClass:(Class)klass url:(NSURL *)url;
 
 - (void)perform:(DKQueryFinishBlock)block;
 - (void)perform:(DKQueryFinishBlock)block cacheStrategy:(DKRestCacheStrategy)cache;

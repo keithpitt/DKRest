@@ -75,7 +75,7 @@ describe(@"-perform:cacheStrategy:", ^{
         // Stub the next API request
         [DKAPIStub stubWithBlock:^(DKAPIRequest * apiRequest) {
             
-            expect([apiRequest.formDataRequest.url absoluteString]).toEqual(@"http://api.example.com/v1/dkrestobjects?first_name=Keith&last_name=Pitt");
+            expect([apiRequest.formDataRequest.url absoluteString]).toEqual(@"http://api.example.com/dkrestobjects?first_name=Keith&last_name=Pitt");
             
             return [DKAPIResponse responseWithStatus:@"ok" data:users errors:nil];
             

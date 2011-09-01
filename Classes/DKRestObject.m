@@ -10,56 +10,84 @@
 
 #import "DKAPIRequest.h"
 #import "DKAPIResponse.h"
-#import "DKRestRouter.h"
+#import "DKRestServer.h"
 
 #import "objc/runtime.h"
 #import "NSString+Inflections.h"
 
 @implementation DKRestObject
 
-+ (id<DKRestRouterProtocol>)router {
+static DKRestConfiguration * resourceConfiguration;
+
++ (DKRestConfiguration *)resourceConfiguration {
     
-    // Return an instance of the deafult router.
-    return [DKRestRouter defaultRouter];
+    if (!resourceConfiguration) {
+        resourceConfiguration = [[DKRestConfiguration alloc] initWithRestClass:self];
+        [self configureResource:resourceConfiguration];
+    }
+    
+    return resourceConfiguration;
     
 }
 
-+ (NSString *)resourceName {
++ (void)configureResource:(DKRestConfiguration *)config {
     
-    return [[[[self class] description] lowercaseString] singularize];
-    
-}
-
-+ (NSString *)resourcePath {
-    
-    return [[self resourceName] pluralize];
+    // This does nothing by default. This can be overridden by the sub
+    // class to do other config.
     
 }
 
 + (DKRestQuery *)query {
     
-    return [[[DKRestQuery alloc] initWithClass:self] autorelease];
+    DKRestConfiguration * config = [self resourceConfiguration];
+    
+    return [self queryWithPath:config.resourcePathBlock(nil)];
+    
+}
+
++ (DKRestQuery *)queryWithPath:(NSString *)path {
+    
+    DKRestConfiguration * config = [self resourceConfiguration];
+    
+    NSURL * url = [[NSURL URLWithString:config.restServer.host] URLByAppendingPathComponent:path];
+    
+    DKRestQuery * query = [[DKRestQuery alloc] initWithClass:self url:url];
+    
+    return [query autorelease];
     
 }
 
 + (DKRestQuery *)search {
     
-    return [self searchWithPath:[self resourcePath]];
+    // Generate a query
+    DKRestQuery * query = [self query];
+    
+    // Use search query syntax
+    query.search = YES;
+    
+    return query;
     
 }
 
 + (DKRestQuery *)searchWithPath:(NSString *)path {
     
-    DKRestQuery * restQuery = [[DKRestQuery alloc] initWithClass:self];
-    restQuery.search = YES;
+    // Generate a query
+    DKRestQuery * query = [self queryWithPath:path];
     
-    return [restQuery autorelease];
+    // Use search query syntax
+    query.search = YES;
+    
+    return query;
     
 }
 
 + (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod {
     
-    NSURL * url = [[self router] routeFor:self withPath:path];
+    DKRestConfiguration * config = [self resourceConfiguration];
+    
+    NSString * resourcePath = [config.resourcePathBlock(nil) stringByAppendingPathComponent:path];
+    
+    NSURL * url = [[NSURL URLWithString:config.restServer.host] URLByAppendingPathComponent:resourcePath];
 
     DKAPIRequest * request = [[DKAPIRequest alloc] initWithURL:url
                                                  requestMethod:requestMethod
@@ -71,7 +99,11 @@
 
 - (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod {
     
-    NSURL * url = [[[self class] router] routeFor:self withPath:path];
+    DKRestConfiguration * config = [[self class] resourceConfiguration];
+    
+    NSString * resourcePath = [config.resourcePathBlock(self) stringByAppendingPathComponent:path];
+    
+    NSURL * url = [[NSURL URLWithString:config.restServer.host] URLByAppendingPathComponent:resourcePath];
     
     DKAPIRequest * request = [[DKAPIRequest alloc] initWithURL:url
                                                  requestMethod:requestMethod
@@ -125,7 +157,9 @@
 
 - (void)afterSave:(DKAPIResponse *)response {
     
-    NSDictionary * updatedAttributes = [response.data objectForKey:[[self class] resourceName]];
+    DKRestConfiguration * config = [[self class] resourceConfiguration];
+    
+    NSDictionary * updatedAttributes = [response.data objectForKey:config.resourceName];
     
     if (updatedAttributes)
         [self setAttributes:updatedAttributes];
@@ -212,13 +246,16 @@
     
     [self beforeSave];
     
+    // Rest configuration
+    DKRestConfiguration * config = [[self class] resourceConfiguration];
+    
     // Create the request
     DKAPIRequest * request = [[self class] requestWithPath:@"" requestMethod:@"POST"];
     
     // request.delegate = delegate;
     
     // Add params
-    request.parameters = [NSDictionary dictionaryWithObject:[self attributesToPost] forKey:[[self class] resourceName]];
+    request.parameters = [NSDictionary dictionaryWithObject:[self attributesToPost] forKey:config.resourceName];
     
     // Add the finish block
     request.finishBlock = ^(DKAPIResponse * response, NSError * error) {

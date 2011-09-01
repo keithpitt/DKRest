@@ -10,7 +10,7 @@
 #import <Cedar-iPhone/Cedar.h>
 
 #import "DKCoreData.h"
-#import "DKRestRouter.h"
+#import "DKRestServer.h"
 
 int main(int argc, char *argv[]) {
     
@@ -22,12 +22,8 @@ int main(int argc, char *argv[]) {
     // Delete the database
     [coreData deleteDatabase];
     
-    // Setup the default router
-    
-    DKRestRouter * router = [DKRestRouter defaultRouter];
-    router.ssl = NO;
-    router.host = @"api.example.com";
-    router.version = @"1";
+    // Setup the default server
+    [DKRestServer setDefaultServer:[DKRestServer serverWithHost:@"http://api.example.com"]];
     
     int retVal = UIApplicationMain(argc, argv, nil, @"CedarApplicationDelegate");
     

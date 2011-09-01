@@ -51,10 +51,11 @@
 		53876BBF140A2237009F8171 /* DKAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BB8140A2237009F8171 /* DKAPIResponse.m */; };
 		53876BC0140A2237009F8171 /* DKAPIStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BBA140A2237009F8171 /* DKAPIStub.m */; };
 		53876BC4140A2297009F8171 /* DKRestObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53876BC3140A2297009F8171 /* DKRestObjectSpec.m */; };
+		53BF7298140F3CDE00A63EA0 /* DKRestConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BF7297140F3CDE00A63EA0 /* DKRestConfiguration.m */; };
+		53BF72A0140F6E4200A63EA0 /* MockUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BF729F140F6E4200A63EA0 /* MockUser.m */; };
 		53FFD01314011CEC00E6B764 /* DKRestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD00C14011CEC00E6B764 /* DKRestObject.m */; };
 		53FFD01414011CEC00E6B764 /* DKRestQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD00F14011CEC00E6B764 /* DKRestQuery.m */; };
-		53FFD01514011CEC00E6B764 /* DKRestRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01114011CEC00E6B764 /* DKRestRouter.m */; };
-		53FFD01914011D3900E6B764 /* DKAPIRouterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01714011D3900E6B764 /* DKAPIRouterSpec.m */; };
+		53FFD01514011CEC00E6B764 /* DKRestServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01114011CEC00E6B764 /* DKRestServer.m */; };
 		53FFD01E14011D4600E6B764 /* FGSpecRemoteUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD01D14011D4600E6B764 /* FGSpecRemoteUser.m */; };
 		53FFD05114011D7E00E6B764 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD02D14011D7E00E6B764 /* ASIAuthenticationDialog.m */; };
 		53FFD05214011D7E00E6B764 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD03014011D7E00E6B764 /* ASIDataCompressor.m */; };
@@ -126,7 +127,6 @@
 		531564EA14039E40009A79E5 /* DKRestObject+POST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+POST.m"; sourceTree = "<group>"; };
 		531564EB14039E41009A79E5 /* DKRestObject+PUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKRestObject+PUT.h"; sourceTree = "<group>"; };
 		531564EC14039E41009A79E5 /* DKRestObject+PUT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKRestObject+PUT.m"; sourceTree = "<group>"; };
-		531564F114039F95009A79E5 /* DKRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRest.h; sourceTree = "<group>"; };
 		531564F31403A17D009A79E5 /* ImportableUsers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ImportableUsers.json; sourceTree = "<group>"; };
 		531564F41403A17D009A79E5 /* InvalidCafesFormat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InvalidCafesFormat.json; sourceTree = "<group>"; };
 		531564F51403A17D009A79E5 /* NonExistantModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NonExistantModel.json; sourceTree = "<group>"; };
@@ -193,15 +193,17 @@
 		53876BB9140A2237009F8171 /* DKAPIStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKAPIStub.h; path = DKAPIRequest/Classes/DKAPIStub.h; sourceTree = "<group>"; };
 		53876BBA140A2237009F8171 /* DKAPIStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIStub.m; path = DKAPIRequest/Classes/DKAPIStub.m; sourceTree = "<group>"; };
 		53876BC3140A2297009F8171 /* DKRestObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRestObjectSpec.m; path = Specs/DKRestObjectSpec.m; sourceTree = "<group>"; };
+		53BF7296140F3CDE00A63EA0 /* DKRestConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestConfiguration.h; sourceTree = "<group>"; };
+		53BF7297140F3CDE00A63EA0 /* DKRestConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRestConfiguration.m; sourceTree = "<group>"; };
+		53BF729E140F6E4200A63EA0 /* MockUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockUser.h; sourceTree = "<group>"; };
+		53BF729F140F6E4200A63EA0 /* MockUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockUser.m; sourceTree = "<group>"; };
 		53FFD00B14011CEC00E6B764 /* DKRestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestObject.h; sourceTree = "<group>"; };
 		53FFD00C14011CEC00E6B764 /* DKRestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRestObject.m; sourceTree = "<group>"; };
-		53FFD00D14011CEC00E6B764 /* DKRestObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestObjectProtocol.h; sourceTree = "<group>"; };
 		53FFD00E14011CEC00E6B764 /* DKRestQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestQuery.h; sourceTree = "<group>"; };
 		53FFD00F14011CEC00E6B764 /* DKRestQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRestQuery.m; sourceTree = "<group>"; };
-		53FFD01014011CEC00E6B764 /* DKRestRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestRouter.h; sourceTree = "<group>"; };
-		53FFD01114011CEC00E6B764 /* DKRestRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRestRouter.m; sourceTree = "<group>"; };
-		53FFD01214011CEC00E6B764 /* DKRestRouterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestRouterProtocol.h; sourceTree = "<group>"; };
-		53FFD01714011D3900E6B764 /* DKAPIRouterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKAPIRouterSpec.m; path = Specs/DKAPIRouterSpec.m; sourceTree = "<group>"; };
+		53FFD01014011CEC00E6B764 /* DKRestServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestServer.h; sourceTree = "<group>"; };
+		53FFD01114011CEC00E6B764 /* DKRestServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRestServer.m; sourceTree = "<group>"; };
+		53FFD01214011CEC00E6B764 /* DKRestServerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRestServerProtocol.h; sourceTree = "<group>"; };
 		53FFD01C14011D4600E6B764 /* FGSpecRemoteUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGSpecRemoteUser.h; sourceTree = "<group>"; };
 		53FFD01D14011D4600E6B764 /* FGSpecRemoteUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGSpecRemoteUser.m; sourceTree = "<group>"; };
 		53FFD02C14011D7E00E6B764 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -286,7 +288,6 @@
 		5315647D140354DA009A79E5 /* DKRestObject */ = {
 			isa = PBXGroup;
 			children = (
-				53FFD00D14011CEC00E6B764 /* DKRestObjectProtocol.h */,
 				531564E214039CE7009A79E5 /* DKRestObject+HTTP.h */,
 				531564E314039CE7009A79E5 /* DKRestObject+HTTP.m */,
 				5315648114035506009A79E5 /* DKRestObject+GET.h */,
@@ -398,14 +399,14 @@
 			path = DKSupport/External/NSLogger;
 			sourceTree = "<group>";
 		};
-		531564E114039899009A79E5 /* DKRestRouter */ = {
+		531564E114039899009A79E5 /* DKRestServer */ = {
 			isa = PBXGroup;
 			children = (
-				53FFD01214011CEC00E6B764 /* DKRestRouterProtocol.h */,
-				53FFD01014011CEC00E6B764 /* DKRestRouter.h */,
-				53FFD01114011CEC00E6B764 /* DKRestRouter.m */,
+				53FFD01214011CEC00E6B764 /* DKRestServerProtocol.h */,
+				53FFD01014011CEC00E6B764 /* DKRestServer.h */,
+				53FFD01114011CEC00E6B764 /* DKRestServer.m */,
 			);
-			name = DKRestRouter;
+			name = DKRestServer;
 			sourceTree = "<group>";
 		};
 		531564F21403A17D009A79E5 /* Data */ = {
@@ -452,7 +453,6 @@
 			children = (
 				53FFD00A14011CEC00E6B764 /* Classes */,
 				537874A914010A0A00D9B746 /* Specs */,
-				53FFD01714011D3900E6B764 /* DKAPIRouterSpec.m */,
 				53247FAC140B634300C33061 /* DKRestQuerySpec.m */,
 				53876BC3140A2297009F8171 /* DKRestObjectSpec.m */,
 				537874C014010A5700D9B746 /* External */,
@@ -555,14 +555,15 @@
 		53FFD00A14011CEC00E6B764 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				531564F114039F95009A79E5 /* DKRest.h */,
 				531564A914038591009A79E5 /* DKRestCacheStrategy.h */,
-				531564E114039899009A79E5 /* DKRestRouter */,
+				531564E114039899009A79E5 /* DKRestServer */,
 				5315647D140354DA009A79E5 /* DKRestObject */,
 				53FFD00B14011CEC00E6B764 /* DKRestObject.h */,
 				53FFD00C14011CEC00E6B764 /* DKRestObject.m */,
 				53FFD00E14011CEC00E6B764 /* DKRestQuery.h */,
 				53FFD00F14011CEC00E6B764 /* DKRestQuery.m */,
+				53BF7296140F3CDE00A63EA0 /* DKRestConfiguration.h */,
+				53BF7297140F3CDE00A63EA0 /* DKRestConfiguration.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -572,6 +573,8 @@
 			children = (
 				53FFD01C14011D4600E6B764 /* FGSpecRemoteUser.h */,
 				53FFD01D14011D4600E6B764 /* FGSpecRemoteUser.m */,
+				53BF729E140F6E4200A63EA0 /* MockUser.h */,
+				53BF729F140F6E4200A63EA0 /* MockUser.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -790,8 +793,7 @@
 				537874B014010A0A00D9B746 /* main.m in Sources */,
 				53FFD01314011CEC00E6B764 /* DKRestObject.m in Sources */,
 				53FFD01414011CEC00E6B764 /* DKRestQuery.m in Sources */,
-				53FFD01514011CEC00E6B764 /* DKRestRouter.m in Sources */,
-				53FFD01914011D3900E6B764 /* DKAPIRouterSpec.m in Sources */,
+				53FFD01514011CEC00E6B764 /* DKRestServer.m in Sources */,
 				53FFD01E14011D4600E6B764 /* FGSpecRemoteUser.m in Sources */,
 				53FFD05114011D7E00E6B764 /* ASIAuthenticationDialog.m in Sources */,
 				53FFD05214011D7E00E6B764 /* ASIDataCompressor.m in Sources */,
@@ -847,6 +849,8 @@
 				53628408140E07C1006ABF3E /* JSONKit.m in Sources */,
 				53628410140E0879006ABF3E /* DKFile.m in Sources */,
 				53628411140E0879006ABF3E /* DKFile+JSON.m in Sources */,
+				53BF7298140F3CDE00A63EA0 /* DKRestConfiguration.m in Sources */,
+				53BF72A0140F6E4200A63EA0 /* MockUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

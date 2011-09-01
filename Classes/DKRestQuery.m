@@ -9,22 +9,23 @@
 #import "DKRestQuery.h"
 
 #import "DKRestObject.h"
-#import "DKCoreDataImporter.h"
 #import "DKAPIResponse.h"
+#import "DKRestConfiguration.h"
+
+#import "DKCoreDataImporter.h"
 
 #import "NSString+Inflections.h"
 #import "NSString+Hash.h"
 
 @implementation DKRestQuery
 
-@synthesize restClass, finishBlock, search, downloadCache;
+@synthesize restClass, queryURL, finishBlock, search, downloadCache, lastPerformDate;
 
-@synthesize lastPerformDate;
-
-- (id)initWithClass:(Class)klass {
+- (id)initWithClass:(Class)klass url:(NSURL *)url {
     
     if ((self = [super init])) {
         self.restClass = klass;
+        self.queryURL = url;
     }
     
     return self;
@@ -106,18 +107,15 @@
     
     // Create restfull objects based on the data
     NSMutableArray * resources = [NSMutableArray array];
-    NSDictionary * attributes;
     
     DKRestObject * object;
     
+    DKRestConfiguration * configuration = [restClass performSelector:@selector(resourceConfiguration)];
+    
     for (NSDictionary * dictionary in data) {
         
-        // Grab the attributes
-        attributes = [dictionary objectForKey:[self.restClass performSelector:@selector(resourceName)]];
-        
-        // Create a rest resource
-        object = [self.restClass new];
-        [object setAttributes:attributes];
+        // Convert the data object into a rest resource
+        object = configuration.resourceFromDataObject(dictionary);
         
         // Add it to the resources array
         [resources addObject:object];
@@ -150,15 +148,12 @@
     // Copy the success block (we should always have one)
     self.finishBlock = Block_copy(block);
     
-    // Grab the router for the resource
-    id <DKRestRouterProtocol> router = [self.restClass performSelector:@selector(router)];
-    
     // Create a new API request
     DKAPIRequest * request = [DKAPIRequest new];
     
     request.delegate = delegate;
     request.requestMethod = HTTP_GET_VERB;
-    request.url = [router performSelector:@selector(routeFor:) withObject:restClass];
+    request.url = queryURL;
     
     // Are we caching this response?
     if (cache == DKRestCacheStrategyPersisted || cache == DKRestCacheStrategySession) {
@@ -274,6 +269,7 @@
 
 - (void)dealloc {
     
+    [queryURL release];
     [downloadCache release];
     
     [super dealloc];

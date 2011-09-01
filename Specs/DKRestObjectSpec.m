@@ -9,7 +9,7 @@
 #import "SpecHelper.h"
 #import "FGSpecRemoteUser.h"
 
-#import "DKRest.h"
+#import "DKRestObject.h"
 
 SPEC_BEGIN(DKRestObjectSpec)
 

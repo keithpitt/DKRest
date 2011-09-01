@@ -9,24 +9,23 @@
 #import <Foundation/Foundation.h>
 
 #import "DKAPIRequest.h"
+#import "DKRestConfiguration.h"
 #import "DKAPIFormDataProtocol.h"
 
-#import "DKRestRouterProtocol.h"
-#import "DKRestObjectProtocol.h"
 #import "DKRestQuery.h"
 
-@interface DKRestObject : NSObject <DKRestObjectProtocol, DKAPIFormDataProtocol>
+@interface DKRestObject : NSObject <DKAPIFormDataProtocol>
 
-+ (id<DKRestRouterProtocol>)router;
++ (DKRestConfiguration *)resourceConfiguration;
++ (void)configureResource:(DKRestConfiguration *)config;
 
 + (DKRestQuery *)query;
++ (DKRestQuery *)queryWithPath:(NSString *)path;
 
 + (DKRestQuery *)search;
-
 + (DKRestQuery *)searchWithPath:(NSString *)path;
 
 + (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod;
-
 - (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod;
 
 - (void)setId:(id)identifier;
@@ -34,25 +33,24 @@
 - (BOOL)isPersisted;
 
 - (void)beforeCreate;
-
 - (void)beforeUpdate;
-
 - (void)beforeSave;
-
 - (void)afterCreate:(DKAPIResponse *)response;
-
 - (void)afterUpdate:(DKAPIResponse *)response;
-
 - (void)afterSave:(DKAPIResponse *)response;
 
 - (NSDictionary *)attributesToPost;
-
 - (NSDictionary *)attributes;
-
 - (void)setAttributes:(NSDictionary *)attributes;
 
 - (DKAPIRequest *)save:(DKAPIRequestFinishBlock)finishBlock;
-
 - (DKAPIRequest *)save:(DKAPIRequestFinishBlock)finishBlock delegate:(id)delegate;
 
 @end
+
+#import "DKRestObject+GET.h"
+#import "DKRestObject+POST.h"
+#import "DKRestObject+PUT.h"
+#import "DKRestObject+DELETE.h"
+
+#import "DKAPIResponse.h"
