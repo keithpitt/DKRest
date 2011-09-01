@@ -99,10 +99,20 @@ describe(@"-perform:cacheStrategy:", ^{
         
     });
     
-    it(@"should not die if you don't provide a finish block", ^{
+    it(@"should not die if you don't provide a finish block with a successfull response", ^{
         
         [DKAPIStub stubWithBlock:^(DKAPIRequest * apiRequest) {
             return [DKAPIResponse responseWithStatus:@"ok" data:nil errors:nil];
+        }];
+        
+        [[DKRestObject query] perform:nil cacheStrategy:DKRestCacheStrategyCoreData];
+        
+    });
+    
+    it(@"should not die if you don't provide a finish block with an unsuccessfull response", ^{
+        
+        [DKAPIStub stubWithBlock:^(DKAPIRequest * apiRequest) {
+            return [DKAPIResponse responseWithStatus:@"nok" data:nil errors:nil];
         }];
         
         [[DKRestObject query] perform:nil cacheStrategy:DKRestCacheStrategyCoreData];

@@ -219,7 +219,8 @@
             
         } else {
             
-            finishBlock(nil, error);
+            if (self.finishBlock)
+                self.finishBlock(nil, error);
             
             [self release];
             
