@@ -7,9 +7,9 @@
 //
 
 #import "SpecHelper.h"
-#import "FGSpecRemoteUser.h"
 
-#import "DKRestObject.h"
+#import "FGSpecRemoteUser.h"
+#import "MockUser.h"
 
 SPEC_BEGIN(DKRestObjectSpec)
 
@@ -36,6 +36,19 @@ context(@"- (NSString *)formData:(DKAPIFormData *)formData parameterForKey:(NSSt
         expect([user formData:nil parameterForKey:@"something"]).toEqual(@"something_id");
         expect([user formData:nil parameterForKey:@"something[foo]"]).toEqual(@"something[foo_id]");
         expect([user formData:nil parameterForKey:@"something[foo][bar]"]).toEqual(@"something[foo][bar_id]");
+        
+    });
+    
+});
+
+context(@"+ (DKRestConfiguration *)resourceConfiguration", ^{
+    
+    it(@"should return a resource configuration with the current class set", ^{
+        
+        DKRestConfiguration * config = [MockUser resourceConfiguration];
+        
+        expect(config).Not.toBeNil();
+        expect(config.resourceName).toEqual(@"user");
         
     });
     

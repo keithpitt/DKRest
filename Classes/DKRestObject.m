@@ -17,16 +17,36 @@
 
 @implementation DKRestObject
 
-static DKRestConfiguration * resourceConfiguration;
+static dispatch_once_t once;
+
+static NSMutableDictionary * resourceConfigurations = nil;
 
 + (DKRestConfiguration *)resourceConfiguration {
+        
+    dispatch_once(&once, ^ { 
+        
+        if (!resourceConfigurations)
+            resourceConfigurations = [[NSMutableDictionary alloc] init];
+        
+    });
     
-    if (!resourceConfiguration) {
-        resourceConfiguration = [[DKRestConfiguration alloc] initWithRestClass:self];
-        [self configureResource:resourceConfiguration];
+    @synchronized(resourceConfigurations) {
+        
+        DKRestConfiguration * configuration = [resourceConfigurations objectForKey:[self description]];
+        
+        if (!configuration) {
+            
+            configuration = [[DKRestConfiguration alloc] initWithRestClass:self];
+            
+            [self configureResource:configuration];
+            
+            [resourceConfigurations setObject:configuration forKey:[self description]];
+            
+        }
+        
+        return configuration;
+        
     }
-    
-    return resourceConfiguration;
     
 }
 
