@@ -169,13 +169,16 @@ context(@"- (void)mapProperty:(NSString *)property toParameter:(NSString *)param
         MockUser * user = [[MockUser alloc] initWithObjectsAndKeys:
                            @"12", @"id",
                            @"Keith", @"firstName",
+                           @"Pitt", @"lastName",
                            nil];
         
         [config mapProperty:@"firstName" toParameter:nil];
+        [config ignoreProperty:@"lastName"];
         
         NSDictionary * postAttributes = config.postParametersBlock(user);
         
         expect([postAttributes valueForKey:@"first_name"]).toBeNil();
+        expect([postAttributes valueForKey:@"last_name"]).toBeNil();
         
     });
     

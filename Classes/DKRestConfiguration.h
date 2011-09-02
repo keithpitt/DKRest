@@ -48,6 +48,7 @@ typedef DKRestObject * (^DKRestResourceFromObjectBlock)(NSDictionary *);
 
 - (void)postParameters:(DKRestParametersBlock)block;
 
+- (void)ignoreProperty:(NSString *)property;
 - (void)mapProperty:(NSString *)property toParameter:(NSString *)param;
 - (void)mapProperty:(NSString *)property toParameter:(NSString *)param nestObjects:(BOOL)nestObjects;
 

@@ -179,6 +179,12 @@
     
 }
 
+- (void)ignoreProperty:(NSString *)property {
+    
+    [self mapProperty:property toParameter:nil];
+    
+}
+
 - (void)mapProperty:(NSString *)property toParameter:(NSString *)param {
     
     [self mapProperty:property toParameter:param nestObjects:NO];
