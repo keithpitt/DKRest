@@ -233,6 +233,9 @@
     Block_release(resourcePathBlock);
     Block_release(postParametersBlock);
     Block_release(resourceFromDataObject);
+
+    [super dealloc];
+    
 }
 
 @end
