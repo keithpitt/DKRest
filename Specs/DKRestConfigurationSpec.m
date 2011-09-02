@@ -218,6 +218,8 @@ context(@"- (void)mapProperty:(NSString *)property toParameter:(NSString *)param
         
         NSLog(@"%@", postAttributes);
         
+        expect(true).toBeFalsy();
+        
     });
     
     it(@"should allow you to nest objects", ^{
@@ -234,6 +236,8 @@ context(@"- (void)mapProperty:(NSString *)property toParameter:(NSString *)param
         NSDictionary * postAttributes = config.postParametersBlock(user);
         
         NSLog(@"%@", postAttributes);
+        
+        expect(true).toBeFalsy();
         
     });
     
