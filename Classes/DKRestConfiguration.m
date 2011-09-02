@@ -24,6 +24,9 @@
         // Set the default server
         [self server:[DKRestServer defaultServer]];
         
+        ignoredParameters = [[NSMutableArray alloc] init];
+        parameterMapping = [[NSMutableDictionary alloc] init];
+        
     }
     
     return self;
@@ -88,8 +91,8 @@
         // Defualt property list
         
         [self postParameters:^(DKRestObject * object) {
-
-            return [object attributes];
+            
+            return [object attributesWithMappingRules:parameterMapping andIgnoreProperties:ignoredParameters];
 
         }];
         
@@ -178,9 +181,27 @@
 
 - (void)mapProperty:(NSString *)property toParameter:(NSString *)param {
     
+    [self mapProperty:property toParameter:param nestObjects:NO];
+    
 }
 
 - (void)mapProperty:(NSString *)property toParameter:(NSString *)param nestObjects:(BOOL)nestObjects {
+    
+    // If passing "nil", you are effectivley ignoring the mapping
+    if (!param) {
+        
+        [ignoredParameters addObject:property];
+        
+    } else {
+        
+        NSMutableDictionary * definition = [NSMutableDictionary dictionaryWithObject:param forKey:@"parameter"];
+        
+        if (nestObjects)
+            [definition setValue:@"YES" forKey:@"nestObjects"];
+        
+        [parameterMapping setObject:definition forKey:property];
+        
+    }
     
 }
 
@@ -195,6 +216,9 @@
 }
 
 - (void)dealloc {
+    
+    [parameterMapping release];
+    [ignoredParameters release];
     
     [primaryKey release];
     [restServer release];

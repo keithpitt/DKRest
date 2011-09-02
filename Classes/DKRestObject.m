@@ -123,7 +123,7 @@ static NSMutableDictionary * resourceConfigurations = nil;
     
 }
 
-- (id)build:(id)firstObject, ... {
+- (id)initWithObjectsAndKeys:(id)firstObject, ... {
     
     if ((self = [self init])) {
         
@@ -231,20 +231,44 @@ static NSMutableDictionary * resourceConfigurations = nil;
 
 - (NSDictionary *)attributes {
     
+    return [self attributesWithMappingRules:nil andIgnoreProperties:nil];
+    
+}
+
+- (NSDictionary *)attributesWithMappingRules:(NSDictionary *)mappingRules andIgnoreProperties:(NSArray *)ignoreProperties {
+    
     NSMutableDictionary * attributes = [NSMutableDictionary dictionary];
     
     unsigned int propertyCount, i;
     objc_property_t * properties = class_copyPropertyList([self class], &propertyCount);
     
+    NSDictionary * definition;
+    NSString * propertyName;
+    
     for (i = 0; i < propertyCount; i++) {        
         
         objc_property_t property = properties[i];
         
-        NSString * propertyName = [NSString stringWithCString:property_getName(property)
-                                                     encoding:NSASCIIStringEncoding];
+        propertyName = [NSString stringWithCString:property_getName(property)
+                                          encoding:NSASCIIStringEncoding];
         
-        [attributes setValue:[self valueForKey:propertyName]
-                      forKey:[propertyName underscore]];
+        // Properties to ignore
+        if (ignoreProperties && [ignoreProperties containsObject:propertyName]) {
+            continue;
+        }
+        
+        // Remapped properties?
+        if (mappingRules && (definition = [mappingRules objectForKey:propertyName])) {
+            
+            [attributes setValue:[self valueForKey:propertyName]
+                          forKey:[definition objectForKey:@"parameter"]];
+            
+        } else {
+            
+            [attributes setValue:[self valueForKey:propertyName]
+                          forKey:[propertyName underscore]];
+            
+        }
         
     }
     

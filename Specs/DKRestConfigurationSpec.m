@@ -10,6 +10,7 @@
 
 #import "MockUser.h"
 #import "DKRestServer.h"
+#import "MockRole.h"
 
 SPEC_BEGIN(DKRestConfigurationSpec)
 
@@ -71,7 +72,7 @@ context(@"- (id)initWithRestClass:(Class)klass", ^{
     
     it(@"should set a default way of generating post properties", ^{
         
-        MockUser * user = [[MockUser alloc] build:
+        MockUser * user = [[MockUser alloc] initWithObjectsAndKeys:
                            @"12", @"id",
                            @"Keith", @"firstName",
                            nil];
@@ -120,6 +121,119 @@ context(@"- (NSString *)resourceName", ^{
         DKRestConfiguration * config = [MockUser resourceConfiguration];
         
         expect(config.resourceName).toEqual(@"user");
+        
+    });
+    
+});
+
+context(@"- (void)resourceVersion:(NSString *)version", ^{
+    
+    it(@"should allow you to set a resource version", ^{
+        
+        DKRestConfiguration * config = [MockUser resourceConfiguration];
+        
+        [config resourceVersion:@"2"];
+        
+        expect(config.resourceVersion).toEqual(@"2");
+        
+    });
+    
+});
+
+context(@"- (void)primaryKey:(NSString *)version", ^{
+    
+    it(@"should allow you to set a primary key", ^{
+        
+        DKRestConfiguration * config = [MockUser resourceConfiguration];
+        
+        [config primaryKey:@"2"];
+        
+        expect(config.primaryKey).toEqual(@"2");
+        
+    });
+    
+});
+
+context(@"- (void)mapProperty:(NSString *)property toParameter:(NSString *)param nestObjects:(BOOL)nestObjects", ^{
+    
+    __block DKRestConfiguration * config;
+    
+    beforeEach(^{
+        
+        config = [MockUser resourceConfiguration];
+        
+    });
+    
+    it(@"should allow you to ignore some properties", ^{
+        
+        MockUser * user = [[MockUser alloc] initWithObjectsAndKeys:
+                           @"12", @"id",
+                           @"Keith", @"firstName",
+                           nil];
+        
+        [config mapProperty:@"firstName" toParameter:nil];
+        
+        NSDictionary * postAttributes = config.postParametersBlock(user);
+        
+        expect([postAttributes valueForKey:@"first_name"]).toBeNil();
+        
+    });
+    
+    it(@"should allow you remap properties", ^{
+        
+        MockUser * user = [[MockUser alloc] initWithObjectsAndKeys:
+                           @"12", @"id",
+                           @"Keith", @"firstName",
+                           nil];
+        
+        [config mapProperty:@"firstName" toParameter:@"real_first_name"];
+        
+        NSDictionary * postAttributes = config.postParametersBlock(user);
+        
+        expect([postAttributes objectForKey:@"real_first_name"]).toEqual(@"Keith");
+        
+    });
+    
+    it(@"should allow you to have associations", ^{
+        
+        MockUser * user = [[MockUser alloc] initWithObjectsAndKeys: @"12", @"id", @"Keith", @"firstName", nil];
+        user.defaultRole = [[MockRole alloc] initWithObjectsAndKeys:@"Admin", @"name", @"12", @"id", nil];
+        
+        NSDictionary * postAttributes = config.postParametersBlock(user);
+        
+        NSLog(@"%@", postAttributes);
+        
+    });
+    
+    it(@"should allow you to include a list of ids as a post parameter", ^{
+        
+        MockUser * user = [[MockUser alloc] initWithObjectsAndKeys: @"12", @"id", @"Keith", @"firstName", nil];
+        
+        MockRole * adminRole = [[MockRole alloc] initWithObjectsAndKeys:@"Admin", @"name", @"12", @"id", nil];
+        MockRole * designerRole = [[MockRole alloc] initWithObjectsAndKeys:@"Designer", @"name", @"12", @"id", nil];
+        
+        user.roles = [NSArray arrayWithObjects:adminRole, designerRole, nil];
+        
+        NSDictionary * postAttributes = config.postParametersBlock(user);
+        
+        NSLog(@"%@", postAttributes);
+        
+    });
+    
+    it(@"should allow you to nest objects", ^{
+        
+        MockUser * user = [[MockUser alloc] initWithObjectsAndKeys: @"12", @"id", @"Keith", @"firstName", nil];
+        
+        MockRole * adminRole = [[MockRole alloc] initWithObjectsAndKeys:@"Admin", @"name", @"12", @"id", nil];
+        MockRole * designerRole = [[MockRole alloc] initWithObjectsAndKeys:@"Designer", @"name", @"12", @"id", nil];
+        
+        user.roles = [NSArray arrayWithObjects:adminRole, designerRole, nil];
+        
+        [config mapProperty:@"roles" toParameter:@"roles_attributes" nestObjects:YES];
+        
+        NSDictionary * postAttributes = config.postParametersBlock(user);
+        
+        NSLog(@"%@", postAttributes);
         
     });
     

@@ -27,7 +27,7 @@
 
 + (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod;
 
-- (id)build:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)initWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (void)setId:(id)identifier;
 
@@ -41,6 +41,8 @@
 - (void)afterSave:(DKAPIResponse *)response;
 
 - (NSDictionary *)attributes;
+- (NSDictionary *)attributesWithMappingRules:(NSDictionary *)mappingRules andIgnoreProperties:(NSArray *)ignoreProperties;
+
 - (void)setAttributes:(NSDictionary *)attributes;
 
 - (DKAPIRequest *)requestWithPath:(NSString *)path requestMethod:(NSString *)requestMethod;

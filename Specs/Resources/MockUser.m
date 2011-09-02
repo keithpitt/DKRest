@@ -10,7 +10,7 @@
 
 @implementation MockUser
 
-@synthesize identifier, firstName, lastName;
+@synthesize identifier, firstName, lastName, roles, defaultRole;
 
 + (void)configureResource:(DKRestConfiguration *)config {
     

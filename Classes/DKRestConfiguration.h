@@ -18,6 +18,9 @@ typedef DKRestObject * (^DKRestResourceFromObjectBlock)(NSDictionary *);
 @interface DKRestConfiguration : NSObject {
     
     Class restClass;
+    
+    NSMutableDictionary * parameterMapping;
+    NSMutableArray * ignoredParameters;
 
 }
 
