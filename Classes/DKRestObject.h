@@ -29,8 +29,6 @@
 
 - (id)initWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
-- (void)setId:(id)identifier;
-
 - (BOOL)isPersisted;
 
 - (void)beforeCreate;
