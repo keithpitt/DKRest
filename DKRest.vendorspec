@@ -1,0 +1,14 @@
+# This is a generated version of the vendorspec. Please change the
+# values to suit your library. Refer to the documentation for a list of
+# all possible attributes.
+
+name          "DKRest"
+version       "0.1"
+
+authors       "keithpitt"
+email         "me@keithpitt.com"
+description   "DESCRIPTION GOES HERE"
+
+github        "https://github.com/keithpitt/DKRest"
+
+files         `git ls-files`.split("\n")
